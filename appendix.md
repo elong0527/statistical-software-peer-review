@@ -1,0 +1,109 @@
+# (APPENDIX) Appendix {-}
+
+# Notes on Scope and the Python Statistical Ecosystem {#python}
+
+
+
+Two factors may be usefully noted in this regard:
+
+
+
+1. The potential number of python packages for statistical analyses is likely
+   to be relatively more restricted than relative numbers of **R** packages.
+   Taking as indicative presentations at the previous three Joint Statistical
+   Meetings (JSMs; 2018-2020), no python packages were referred to in any
+   abstract, while 32 **R** packages were presented, along with two
+   meta-platforms for **R** packages. Presentations at the Symposium of Data
+   Science and Statistics (SDSS) for 2018-19 similarly including numerous
+   presentations of **R** packages, along with presentation of
+   [three](https://altair-viz.github.io)
+   [python](https://github.com/ajboyd2/salmon)
+   [packages](https://github.com/dlsun/symbulate). It may accordingly be
+   expected that potential expansion to include python packages will demand
+   relatively very little time or effort compared with that devoted to **R**
+   packages as the primary software scope.
+2. In spite of the above, the community of python users is enormously greater,
+   reflected in the currently 232,161 packages compared with
+   15,576 packages on CRAN, or over 14 times as
+   many python packages. Similarly, 41.7% of all respondents to the [2019
+   stackoverflow developer
+   survey](https://insights.stackoverflow.com/survey/2019) nominated python as
+   their most popular language, compared with only 5.8% who nominated **R**.
+
+The relative importance of python is powerfully reflected in temporal trends
+from the [stackoverflow developer
+survey](https://insights.stackoverflow.com/survey/2019) from the previous three
+years, with results shown in the following graphic.
+
+<img src="appendix_files/figure-html/py_v_r-1.png" width="672" />
+
+Python is not only more used and more loved than **R**, but both statistics for
+python have consistently grown at a faster rate over the past three years as
+have equivalent statistics for **R**.
+
+Both languages nevertheless have relative well-defined standards for software
+packaging, python via the [Python Package Index
+(pypi)](https://packaging.python.org/tutorials/packaging-projects), and **R**
+via [CRAN](https://cran.r-project.org). In contrast to CRAN, which runs its own
+checks on all packages on a daily basis, there are no automatic checks for
+[pypi](https://packaging.python.org/tutorials/packaging-projects) packages, and
+almost any form of package that minimally conforms to the standards may be
+submitted. This much lower effective barrier to entry likely partially
+contributes to the far greater numbers of
+[pypi](https://packaging.python.org/tutorials/packaging-projects) 
+(232,161) than
+[CRAN](https://cran.r-project.org) (15,576) packages.
+
+## Analysis of statistical software keywords {#appendix-keywords}
+
+The
+[JOSS](https://joss.theoj.org)
+conducts its own peer review process, and publishes textual descriptions of
+accepted software. Each piece of software then has its own web page on the
+journal's site, on which the text is presented as a compiled `.pdf`-format
+document, along with links to the open review, as well as to the software
+repository. The published document must be included within the software
+repository in a file named `paper.md`, which enables automatic extraction and
+analysis of these text descriptions of software. Rather than attempt
+a comprehensive, and unavoidably subjective, categorization of software, these
+textual descriptions were used to identify key words or phrases (hereafter,
+"keywords") which encapsulated the purpose, function, or other general
+descriptive elements of each piece of software. Each paper generally yielded
+multiple keywords. Extracting these from all papers judged to be potentially in
+scope allowed for the construction of a network of topics, in which the nodes
+were the key words and phrases, and the connections between any pair of nodes
+reflected the number of times those two keywords co-occured across all papers.
+
+We extracted all papers accepted and published by JOSS (217 at the time of
+writing in early 2020), and manually determined which of these were broadly
+statistical, reducing the total to 92. We then read through the contents of
+each of these, and recorded as many keywords as possible for each paper. The
+resultant network is shown in the following interactive graphic, in which nodes
+are scaled by numbers of occurrences, and edges by numbers of co-occurrences.
+(Or [click
+here](https://ropenscilabs.github.io/statistical-software/abstracts/network-terms/index.html)
+for full-screen version with link to code.)
+
+<!--html_preserve--><div id="htmlwidget-66cca2ddcc95396e8abb" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-66cca2ddcc95396e8abb">{"x":{"nodes":{"id":["aggregation","algorithm choice","ANCOVA","applied statistics","areal statistics","Bayesian","benchmarking","bias","categorical variables","chronology","clustering","confidence intervals","correlation","covariance","covariates","cross-validation","data preparation","data transformation","density estimator","descriptive statistics","differential equations","dimensionality reduction","discrete data","distance metrics","dynamical systems","EDA","effect sizes","error estimates","estimates","factor analysis","feature selection","focal windows","functional data analysis","graphical output","grouped data","high-dimensional data","histograms","index","inference","information statistics","interaction terms","kernel density","kernel logistic regression","latent variables","learning curve","likelihood","marginal effects","matrix algebra","maximum entropy","maximum likelihood","maximum liklihood","missing value processing","ML","model probability","model selection","model strategy","Monte Carlo","multi-state model","multidimensional model","networks","neural network","noise","non-parametric","non-stationarity","null-hypothesis testing","optimization","ordered response data","outlier detection","overlap","pairwise comparisons","parameter estimation","probability density","probability distributions","random forests","redistribution","regression","reinforcement","reporting","risk","sampling","sensitivity","similarity statistics","simulation","spatial","splines","standard error","stationarity","statistical models","summary statistics","survival","synthetic data","test selection","threshold","time series","trees","uncertainty","variable selection","variance","visualization","warping","workflow"],"label":["aggregation","algorithm choice","ANCOVA","applied statistics","areal statistics","Bayesian","benchmarking","bias","categorical variables","chronology","clustering","confidence intervals","correlation","covariance","covariates","cross-validation","data preparation","data transformation","density estimator","descriptive statistics","differential equations","dimensionality reduction","discrete data","distance metrics","dynamical systems","EDA","effect sizes","error estimates","estimates","factor analysis","feature selection","focal windows","functional data analysis","graphical output","grouped data","high-dimensional data","histograms","index","inference","information statistics","interaction terms","kernel density","kernel logistic regression","latent variables","learning curve","likelihood","marginal effects","matrix algebra","maximum entropy","maximum likelihood","maximum liklihood","missing value processing","ML","model probability","model selection","model strategy","Monte Carlo","multi-state model","multidimensional model","networks","neural network","noise","non-parametric","non-stationarity","null-hypothesis testing","optimization","ordered response data","outlier detection","overlap","pairwise comparisons","parameter estimation","probability density","probability distributions","random forests","redistribution","regression","reinforcement","reporting","risk","sampling","sensitivity","similarity statistics","simulation","spatial","splines","standard error","stationarity","statistical models","summary statistics","survival","synthetic data","test selection","threshold","time series","trees","uncertainty","variable selection","variance","visualization","warping","workflow"],"value":[2,1,1,1,1,7,1,1,7,1,3,1,2,1,2,2,1,1,2,1,1,10,3,2,1,6,2,1,8,1,4,1,3,1,1,2,1,4,3,2,1,4,1,2,1,3,1,2,1,3,1,1,12,1,4,1,8,1,1,7,1,1,1,2,1,3,1,1,1,1,1,4,9,2,1,9,1,2,2,4,1,2,1,3,2,1,1,1,5,6,2,1,1,3,2,1,1,4,5,2,5]},"edges":{"from":["aggregation","aggregation","aggregation","aggregation","aggregation","aggregation","aggregation","algorithm choice","algorithm choice","ANCOVA","applied statistics","applied statistics","applied statistics","areal statistics","areal statistics","areal statistics","areal statistics","areal statistics","Bayesian","Bayesian","Bayesian","Bayesian","Bayesian","Bayesian","Bayesian","Bayesian","Bayesian","Bayesian","Bayesian","Bayesian","benchmarking","benchmarking","bias","bias","bias","bias","categorical variables","categorical variables","categorical variables","categorical variables","categorical variables","categorical variables","categorical variables","categorical variables","categorical variables","categorical variables","categorical variables","categorical variables","chronology","chronology","clustering","clustering","clustering","clustering","clustering","confidence intervals","confidence intervals","confidence intervals","correlation","covariance","covariance","covariates","covariates","covariates","covariates","cross-validation","cross-validation","cross-validation","data preparation","data preparation","data transformation","data transformation","density estimator","density estimator","density estimator","density estimator","density estimator","density estimator","descriptive statistics","descriptive statistics","descriptive statistics","descriptive statistics","descriptive statistics","differential equations","differential equations","differential equations","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","discrete data","discrete data","discrete data","discrete data","discrete data","discrete data","distance metrics","distance metrics","dynamical systems","dynamical systems","EDA","EDA","EDA","EDA","EDA","EDA","EDA","EDA","EDA","EDA","EDA","effect sizes","effect sizes","error estimates","estimates","estimates","estimates","estimates","estimates","estimates","estimates","estimates","estimates","estimates","factor analysis","feature selection","feature selection","feature selection","feature selection","feature selection","feature selection","feature selection","feature selection","focal windows","focal windows","focal windows","focal windows","functional data analysis","functional data analysis","functional data analysis","functional data analysis","functional data analysis","graphical output","graphical output","grouped data","grouped data","grouped data","high-dimensional data","high-dimensional data","high-dimensional data","histograms","histograms","index","index","inference","inference","information statistics","information statistics","information statistics","information statistics","information statistics","interaction terms","interaction terms","kernel density","kernel density","kernel density","kernel density","kernel density","kernel density","kernel density","kernel logistic regression","kernel logistic regression","latent variables","latent variables","latent variables","likelihood","likelihood","marginal effects","matrix algebra","matrix algebra","matrix algebra","matrix algebra","maximum entropy","maximum likelihood","maximum likelihood","maximum likelihood","maximum likelihood","maximum likelihood","maximum liklihood","maximum liklihood","missing value processing","ML","ML","ML","ML","ML","ML","ML","ML","ML","ML","ML","ML","ML","model probability","model selection","model selection","model selection","model selection","model strategy","model strategy","Monte Carlo","Monte Carlo","Monte Carlo","Monte Carlo","Monte Carlo","Monte Carlo","Monte Carlo","Monte Carlo","Monte Carlo","multi-state model","multidimensional model","multidimensional model","multidimensional model","multidimensional model","networks","networks","networks","networks","noise","non-parametric","non-parametric","non-stationarity","non-stationarity","ordered response data","ordered response data","overlap","parameter estimation","parameter estimation","parameter estimation","probability density","probability density","probability distributions","probability distributions","probability distributions","random forests","redistribution","redistribution","regression","regression","regression","regression","reinforcement","reporting","risk","sampling","sampling","similarity statistics","splines","splines","statistical models","summary statistics","summary statistics","survival","synthetic data","threshold","time series","variable selection","visualization"],"to":["Bayesian","estimates","learning curve","Monte Carlo","redistribution","threshold","uncertainty","statistical models","summary statistics","correlation","chronology","discrete data","index","focal windows","kernel density","kernel logistic regression","similarity statistics","spatial","EDA","functional data analysis","likelihood","ML","model selection","Monte Carlo","networks","null-hypothesis testing","redistribution","survival","threshold","uncertainty","networks","optimization","estimates","probability density","probability distributions","sampling","data preparation","error estimates","estimates","index","latent variables","maximum likelihood","missing value processing","ML","model probability","networks","pairwise comparisons","trees","discrete data","index","dimensionality reduction","Monte Carlo","regression","risk","spatial","information statistics","maximum likelihood","probability distributions","variance","risk","variance","EDA","optimization","random forests","trees","likelihood","ML","model selection","missing value processing","ML","visualization","workflow","EDA","kernel density","maximum likelihood","non-parametric","probability density","probability distributions","EDA","information statistics","summary statistics","variable selection","workflow","dynamical systems","inference","likelihood","effect sizes","feature selection","functional data analysis","inference","ML","model strategy","Monte Carlo","neural network","random forests","regression","reinforcement","risk","sampling","spatial","splines","survival","time series","visualization","workflow","index","multi-state model","ordered response data","reporting","summary statistics","survival","ML","similarity statistics","inference","likelihood","factor analysis","information statistics","kernel density","ML","model selection","random forests","summary statistics","trees","variable selection","visualization","workflow","inference","test selection","estimates","learning curve","maximum liklihood","Monte Carlo","non-stationarity","probability density","probability distributions","sampling","simulation","standard error","survival","visualization","functional data analysis","ML","regression","splines","survival","time series","visualization","workflow","kernel density","kernel logistic regression","similarity statistics","spatial","regression","splines","survival","visualization","warping","ML","summary statistics","histograms","latent variables","regression","networks","outlier detection","regression","latent variables","regression","overlap","visualization","likelihood","test selection","maximum likelihood","probability distributions","summary statistics","variable selection","workflow","marginal effects","regression","kernel logistic regression","maximum likelihood","non-parametric","probability density","probability distributions","similarity statistics","spatial","similarity statistics","spatial","model probability","pairwise comparisons","regression","model selection","Monte Carlo","regression","ML","probability density","probability distributions","sensitivity","networks","networks","non-parametric","probability density","probability distributions","trees","probability density","probability distributions","ML","model selection","model strategy","networks","neural network","probability density","probability distributions","regression","reinforcement","sampling","summary statistics","survival","visualization","workflow","pairwise comparisons","regression","reporting","survival","visualization","reinforcement","sampling","redistribution","regression","sampling","simulation","spatial","summary statistics","survival","threshold","uncertainty","survival","parameter estimation","regression","splines","survival","optimization","outlier detection","stationarity","trees","variance","probability density","probability distributions","survival","time series","reporting","summary statistics","visualization","regression","splines","survival","probability distributions","sampling","regression","sampling","synthetic data","trees","threshold","uncertainty","splines","survival","visualization","warping","sampling","summary statistics","variance","spatial","synthetic data","spatial","survival","visualization","summary statistics","variable selection","workflow","visualization","variance","uncertainty","warping","workflow","workflow"],"width":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,1,2,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,1,1,1,1,1,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,1,1,2,1,1,1,1,2,3,2,1,1,1,1,1,1,1,2,1,1,1,1,2,1,1,1,1,1]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+
+Such a network visualization enables immediate identification of more and less
+central concepts including, in our case, several that we may not otherwise have
+conceived of as having been potentially in scope. We then used this network to
+define our set of key "in scope" concepts. This figure also reveals that many
+of these keywords are somewhat "lower level" than the kinds of concepts we
+might otherwise have used to define scoping categories. For example, keywords
+such as "likelihood" or "probability" are not likely to be useful in defining
+actual categories of statistical software, yet they turned out to lie at the
+centres of relatively well-defined groups of related keywords.
+
+We also examined the forms of both input and output data for each of the 92
+pieces of software described in these JOSS papers, and constructed [an
+additional
+graph](https://ropenscilabs.github.io/statistical-software/abstracts/network-io/index.html)
+directionally relating these different data formats.
+
+<!--html_preserve--><div id="htmlwidget-bde53bcaab137c703379" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bde53bcaab137c703379">{"x":{"nodes":{"id":[1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,20,21,22,23,24,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40],"label":["adjacency matrix","application-specific data","application-specific data format","arbitrary data","binary vectors","binned data","categorical data","custom graph format","data.frame","formula","genetic data","graph","index scores","matrix","ML data","model estimates","model prediction","model predictions","network","numeric & categorical variables","numeric variables","numeric vector","numeric vectors","parameters","populations","probability","probability estimates","reports","S3 function","spatial data","statistical parameters","summary statistics","summary web page","time series","trained ML model","transformed data.frame","visualization","web-based visualization"],"value":[1,1,13,1,1,1,2,1,50,3,1,2,1,3,9,34,8,3,1,1,6,8,13,5,1,1,1,1,1,1,1,52,1,5,1,1,11,1]},"edges":{"from":[26,26,26,26,9,9,9,9,9,9,9,9,9,9,9,9,9,23,23,23,15,15,15,15,36,36,36,7,7,16,16,16,16,16,16,3,3,3,3,3,3,24,24,24,24,11,11,12,32,5,5,21,21,6,22,22,22,22,2,2,2,4,4,13,13],"to":[37,17,27,8,24,26,17,34,39,18,31,20,1,19,38,40,14,17,34,31,17,34,39,18,17,34,19,17,34,17,34,39,18,35,30,17,34,39,3,14,13,17,34,18,33,34,18,34,17,34,28,17,19,17,17,34,39,19,17,34,29,34,39,3,13],"width":[1,1,1,1,1,1,19,30,7,6,1,1,1,2,1,1,1,4,5,1,1,2,1,1,4,3,1,2,2,2,5,2,1,1,1,3,7,4,2,1,1,4,11,1,1,3,1,1,1,1,1,1,1,1,2,4,2,1,1,1,1,1,1,1,1]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+
+## Bibliography

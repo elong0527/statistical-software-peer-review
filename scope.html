@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Scope [SEEKING FEEDBACK] | rOpenSci Statistical Software Peer Review</title>
+  <meta name="description" content="Chapter 4 Scope [SEEKING FEEDBACK] | rOpenSci Statistical Software Peer Review" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Scope [SEEKING FEEDBACK] | rOpenSci Statistical Software Peer Review" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://ropensci-blog-guidance.netlify.com/" />
+  
+  
+  <meta name="github-repo" content="ropenscilabs/statistical-software-peer-review" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Scope [SEEKING FEEDBACK] | rOpenSci Statistical Software Peer Review" />
+  
+  
+  
+
+<meta name="author" content="Mark Padgham and Noam Ross" />
+
+
+<meta name="date" content="2020-05-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicon/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="reading.html"/>
+<link rel="next" href="standards.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
+<script src="libs/vis-4.20.1/vis.min.js"></script>
+<script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://github.com/ropenscilabs/statistical-software-peer-review"><i class="fa fa-github"></i> Statistical Software Peer Review</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="2" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>2</b> Project Overview</a><ul>
+<li class="chapter" data-level="2.1" data-path="overview.html"><a href="overview.html#project-aims"><i class="fa fa-check"></i><b>2.1</b> Project Aims</a></li>
+<li class="chapter" data-level="2.2" data-path="overview.html"><a href="overview.html#related-projects-and-initiatives"><i class="fa fa-check"></i><b>2.2</b> Related projects and initiatives</a></li>
+<li class="chapter" data-level="2.3" data-path="overview.html"><a href="overview.html#outline-of-this-document"><i class="fa fa-check"></i><b>2.3</b> Outline of this document</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="overview.html"><a href="overview.html#scope-of-statistical-software-review"><i class="fa fa-check"></i><b>2.3.1</b> Scope of Statistical Software Review</a></li>
+<li class="chapter" data-level="2.3.2" data-path="overview.html"><a href="overview.html#standards-for-statistical-software"><i class="fa fa-check"></i><b>2.3.2</b> Standards for Statistical Software</a></li>
+<li class="chapter" data-level="2.3.3" data-path="overview.html"><a href="overview.html#software-assessment"><i class="fa fa-check"></i><b>2.3.3</b> Software Assessment</a></li>
+<li class="chapter" data-level="2.3.4" data-path="overview.html"><a href="overview.html#statistical-software-peer-review-process"><i class="fa fa-check"></i><b>2.3.4</b> Statistical Software Peer Review Process</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="overview.html"><a href="overview.html#community"><i class="fa fa-check"></i><b>2.4</b> Community</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reading.html"><a href="reading.html"><i class="fa fa-check"></i><b>3</b> Some Light Reading: An Annotated Bibliography</a><ul>
+<li class="chapter" data-level="3.1" data-path="reading.html"><a href="reading.html#books"><i class="fa fa-check"></i><b>3.1</b> Books</a></li>
+<li class="chapter" data-level="3.2" data-path="reading.html"><a href="reading.html#journal-articles"><i class="fa fa-check"></i><b>3.2</b> Journal Articles</a></li>
+<li class="chapter" data-level="3.3" data-path="reading.html"><a href="reading.html#technical-reports"><i class="fa fa-check"></i><b>3.3</b> Technical Reports</a></li>
+<li class="chapter" data-level="3.4" data-path="reading.html"><a href="reading.html#computer-programs"><i class="fa fa-check"></i><b>3.4</b> Computer Programs</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="reading.html"><a href="reading.html#computer-programs-testing"><i class="fa fa-check"></i><b>3.4.1</b> Computer Programs (Testing)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="reading.html"><a href="reading.html#web-pages"><i class="fa fa-check"></i><b>3.5</b> Web Pages</a></li>
+<li class="chapter" data-level="3.6" data-path="reading.html"><a href="reading.html#contributing-to-the-biblopgraphy"><i class="fa fa-check"></i><b>3.6</b> Contributing to the bibliography</a></li>
+</ul></li>
+<li class="part"><span><b>II Scope and Standards</b></span></li>
+<li class="chapter" data-level="4" data-path="scope.html"><a href="scope.html"><i class="fa fa-check"></i><b>4</b> <span style="color:red;">Scope [SEEKING FEEDBACK]<span></a><ul>
+<li class="chapter" data-level="4.1" data-path="scope.html"><a href="scope.html#software-types"><i class="fa fa-check"></i><b>4.1</b> Software types</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="scope.html"><a href="scope.html#languages"><i class="fa fa-check"></i><b>4.1.1</b> Languages</a></li>
+<li class="chapter" data-level="4.1.2" data-path="scope.html"><a href="scope.html#structure"><i class="fa fa-check"></i><b>4.1.2</b> Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="scope.html"><a href="scope.html#scope-categories"><i class="fa fa-check"></i><b>4.2</b> Statistical Categories</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="scope.html"><a href="scope.html#examples-of-statistical-software"><i class="fa fa-check"></i><b>4.2.1</b> Examples of Statistical Software</a></li>
+<li class="chapter" data-level="4.2.2" data-path="scope.html"><a href="scope.html#bayesian-and-monte-carlo-routines"><i class="fa fa-check"></i><b>4.2.2</b> Bayesian and Monte Carlo Routines</a></li>
+<li class="chapter" data-level="4.2.3" data-path="scope.html"><a href="scope.html#dimensionality-reduction-and-feature-selection"><i class="fa fa-check"></i><b>4.2.3</b> Dimensionality Reduction and Feature Selection</a></li>
+<li class="chapter" data-level="4.2.4" data-path="scope.html"><a href="scope.html#machine-learning"><i class="fa fa-check"></i><b>4.2.4</b> Machine Learning</a></li>
+<li class="chapter" data-level="4.2.5" data-path="scope.html"><a href="scope.html#regression-and-interpolation"><i class="fa fa-check"></i><b>4.2.5</b> Regression and Interpolation</a></li>
+<li class="chapter" data-level="4.2.6" data-path="scope.html"><a href="scope.html#statistical-indices-and-scores"><i class="fa fa-check"></i><b>4.2.6</b> Statistical Indices and Scores</a></li>
+<li class="chapter" data-level="4.2.7" data-path="scope.html"><a href="scope.html#visualisation"><i class="fa fa-check"></i><b>4.2.7</b> Visualisation</a></li>
+<li class="chapter" data-level="4.2.8" data-path="scope.html"><a href="scope.html#probability-distributions"><i class="fa fa-check"></i><b>4.2.8</b> Probability Distributions</a></li>
+<li class="chapter" data-level="4.2.9" data-path="scope.html"><a href="scope.html#wrapper-packages"><i class="fa fa-check"></i><b>4.2.9</b> Wrapper Packages</a></li>
+<li class="chapter" data-level="4.2.10" data-path="scope.html"><a href="scope.html#categorical-variables"><i class="fa fa-check"></i><b>4.2.10</b> Categorical Variables</a></li>
+<li class="chapter" data-level="4.2.11" data-path="scope.html"><a href="scope.html#networks"><i class="fa fa-check"></i><b>4.2.11</b> Networks</a></li>
+<li class="chapter" data-level="4.2.12" data-path="scope.html"><a href="scope.html#statistical-reporting-and-exploratory-data-analysis"><i class="fa fa-check"></i><b>4.2.12</b> Statistical Reporting and Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="4.2.13" data-path="scope.html"><a href="scope.html#survival-analyses"><i class="fa fa-check"></i><b>4.2.13</b> Survival Analyses</a></li>
+<li class="chapter" data-level="4.2.14" data-path="scope.html"><a href="scope.html#workflow-support"><i class="fa fa-check"></i><b>4.2.14</b> Workflow Support</a></li>
+<li class="chapter" data-level="4.2.15" data-path="scope.html"><a href="scope.html#summary-statistics"><i class="fa fa-check"></i><b>4.2.15</b> Summary Statistics</a></li>
+<li class="chapter" data-level="4.2.16" data-path="scope.html"><a href="scope.html#spatial-analyses"><i class="fa fa-check"></i><b>4.2.16</b> Spatial Analyses</a></li>
+<li class="chapter" data-level="4.2.17" data-path="scope.html"><a href="scope.html#education"><i class="fa fa-check"></i><b>4.2.17</b> Education</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="scope.html"><a href="scope.html#proposals"><i class="fa fa-check"></i><b>4.3</b> Proposals</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="standards.html"><a href="standards.html"><i class="fa fa-check"></i><b>5</b> Standards</a><ul>
+<li class="chapter" data-level="5.1" data-path="standards.html"><a href="standards.html#other-standards"><i class="fa fa-check"></i><b>5.1</b> Other Standards</a></li>
+<li class="chapter" data-level="5.2" data-path="standards.html"><a href="standards.html#generally-applicable-standards"><i class="fa fa-check"></i><b>5.2</b> Generally Applicable Standards</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="standards.html"><a href="standards.html#overview-testing"><i class="fa fa-check"></i><b>5.2.1</b> Testing</a></li>
+<li class="chapter" data-level="5.2.2" data-path="standards.html"><a href="standards.html#documentation"><i class="fa fa-check"></i><b>5.2.2</b> Documentation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="standards.html"><a href="standards.html#standards-specific-to-statistical-software"><i class="fa fa-check"></i><b>5.3</b> Standards Specific to Statistical Software</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="standards.html"><a href="standards.html#demonstration-of-innovation-novelty-or-advancement"><i class="fa fa-check"></i><b>5.3.1</b> Demonstration of innovation, novelty, or advancement</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="standards.html"><a href="standards.html#proposals-1"><i class="fa fa-check"></i><b>5.4</b> Proposals</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="assessment.html"><a href="assessment.html"><i class="fa fa-check"></i><b>6</b> Assessment</a><ul>
+<li class="chapter" data-level="6.1" data-path="assessment.html"><a href="assessment.html#general-software-metrics"><i class="fa fa-check"></i><b>6.1</b> General Software Metrics</a></li>
+<li class="chapter" data-level="6.2" data-path="assessment.html"><a href="assessment.html#metrics-specific-to-statistical-software"><i class="fa fa-check"></i><b>6.2</b> Metrics specific to statistical software</a></li>
+<li class="chapter" data-level="6.3" data-path="assessment.html"><a href="assessment.html#diagnostics-and-reporting"><i class="fa fa-check"></i><b>6.3</b> Diagnostics and Reporting</a></li>
+<li class="chapter" data-level="6.4" data-path="assessment.html"><a href="assessment.html#proposals-and-aims"><i class="fa fa-check"></i><b>6.4</b> Proposals and Aims</a></li>
+</ul></li>
+<li class="part"><span><b>III Software Review Process and Software Assessment</b></span></li>
+<li class="chapter" data-level="7" data-path="lifeycle.html"><a href="lifeycle.html"><i class="fa fa-check"></i><b>7</b> <span style="color:red;">Software Review and Life Cycle Models [Seeking Feedback]</span></a><ul>
+<li class="chapter" data-level="7.1" data-path="lifeycle.html"><a href="lifeycle.html#other-systems-for-software-and-peer-review"><i class="fa fa-check"></i><b>7.1</b> Other systems for software and peer review</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="lifeycle.html"><a href="lifeycle.html#ropensci"><i class="fa fa-check"></i><b>7.1.1</b> rOpenSci</a></li>
+<li class="chapter" data-level="7.1.2" data-path="lifeycle.html"><a href="lifeycle.html#the-journal-of-open-source-software"><i class="fa fa-check"></i><b>7.1.2</b> The Journal of Open Source Software</a></li>
+<li class="chapter" data-level="7.1.3" data-path="lifeycle.html"><a href="lifeycle.html#academic-journal-reviews"><i class="fa fa-check"></i><b>7.1.3</b> Academic Journal Reviews</a><ul>
+<li class="chapter" data-level="7.1.3.1" data-path="lifeycle.html"><a href="lifeycle.html#primary-and-secondary-editors"><i class="fa fa-check"></i><b>7.1.3.1</b> Primary and Secondary Editors</a></li>
+<li class="chapter" data-level="7.1.3.2" data-path="lifeycle.html"><a href="lifeycle.html#invited-and-mentored-submissions"><i class="fa fa-check"></i><b>7.1.3.2</b> Invited and Mentored Submissions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.1.4" data-path="lifeycle.html"><a href="lifeycle.html#the-debian-system"><i class="fa fa-check"></i><b>7.1.4</b> The Debian System</a></li>
+<li class="chapter" data-level="7.1.5" data-path="lifeycle.html"><a href="lifeycle.html#other-potential-models"><i class="fa fa-check"></i><b>7.1.5</b> Other Potential Models</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="lifeycle.html"><a href="lifeycle.html#software-life-cycle-considerations"><i class="fa fa-check"></i><b>7.2</b> Software Life Cycle Considerations</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="process.html"><a href="process.html"><i class="fa fa-check"></i><b>8</b> <span style="color:red;">The Review Process [SEEKING FEEDBACK]</span></a><ul>
+<li class="chapter" data-level="8.1" data-path="process.html"><a href="process.html#self-eval"><i class="fa fa-check"></i><b>8.1</b> Self-Evaluation of Software Prior to Submission</a></li>
+<li class="chapter" data-level="8.2" data-path="process.html"><a href="process.html#presub-comm"><i class="fa fa-check"></i><b>8.2</b> Pre-Submission Communication</a></li>
+<li class="chapter" data-level="8.3" data-path="process.html"><a href="process.html#reviewers-selection"><i class="fa fa-check"></i><b>8.3</b> Reviewers / Selection</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="process.html"><a href="process.html#database-of-potential-reviewers"><i class="fa fa-check"></i><b>8.3.1</b> Database of Potential Reviewers</a></li>
+<li class="chapter" data-level="8.3.2" data-path="process.html"><a href="process.html#automating-the-identification-of-potential-reviewers"><i class="fa fa-check"></i><b>8.3.2</b> Automating the Identification of Potential Reviewers</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="process.html"><a href="process.html#submission-phase"><i class="fa fa-check"></i><b>8.4</b> Submission</a></li>
+<li class="chapter" data-level="8.5" data-path="process.html"><a href="process.html#initial-screening"><i class="fa fa-check"></i><b>8.5</b> Initial Screening</a></li>
+<li class="chapter" data-level="8.6" data-path="process.html"><a href="process.html#review-process"><i class="fa fa-check"></i><b>8.6</b> Review Process</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="process.html"><a href="process.html#review-templates"><i class="fa fa-check"></i><b>8.6.1</b> Review Templates</a></li>
+<li class="chapter" data-level="8.6.2" data-path="process.html"><a href="process.html#category-specific-aspects-of-reviews"><i class="fa fa-check"></i><b>8.6.2</b> Category-Specific Aspects of Reviews</a></li>
+<li class="chapter" data-level="8.6.3" data-path="process.html"><a href="process.html#reviewer-recommendations"><i class="fa fa-check"></i><b>8.6.3</b> Reviewer Recommendations</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="process.html"><a href="process.html#review-acceptance"><i class="fa fa-check"></i><b>8.7</b> Acceptance / Scoring / Badging</a></li>
+<li class="chapter" data-level="8.8" data-path="process.html"><a href="process.html#post-acceptance-dissemination-publication-etc."><i class="fa fa-check"></i><b>8.8</b> Post-acceptance Dissemination, Publication, etc.</a></li>
+<li class="chapter" data-level="8.9" data-path="process.html"><a href="process.html#ongoing-maintenance"><i class="fa fa-check"></i><b>8.9</b> Ongoing Maintenance</a></li>
+<li class="chapter" data-level="8.10" data-path="process.html"><a href="process.html#structured-review-beyond-acceptance"><i class="fa fa-check"></i><b>8.10</b> Structured Review beyond Acceptance</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="python.html"><a href="python.html"><i class="fa fa-check"></i><b>A</b> Notes on Scope and the Python Statistical Ecosystem</a><ul>
+<li class="chapter" data-level="A.1" data-path="python.html"><a href="python.html#appendix-keywords"><i class="fa fa-check"></i><b>A.1</b> Analysis of statistical software keywords</a></li>
+<li class="chapter" data-level="A.2" data-path="python.html"><a href="python.html#bibliography"><i class="fa fa-check"></i><b>A.2</b> Bibliography</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Made with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">rOpenSci Statistical Software Peer Review</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="scope" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> <span style="color:red;">Scope [SEEKING FEEDBACK]<span></h1>
+<p>One task in extending the rOpenSci peer review system to statistical software
+is defining <em>scope</em> - what software is included or excluded. Defining scope
+requires some grouping of packages into categories. These categories play key
+roles in the peer review process and standards-setting.</p>
+<ol style="list-style-type: decimal">
+<li>Categorical definitions can determine which kinds of software will be admitted;</li>
+<li>Different categories of software will be subject to different standards, so
+categories are key to developing standards, review guidance, and automated
+testing.</li>
+</ol>
+<p>Creating a categorization or ontology of statistical software can easily become
+an overwhelming project in itself. Here we attempt to derive categories or
+descriptors which are <em>practically useful</em> in the standards and review process,
+rather than a formally coherent system. We use a mix of empirical
+research on common groupings of software and subjective judgement as to their
+use in the review process.</p>
+<p>We consider two main types of categories:</p>
+<ol style="list-style-type: decimal">
+<li>Categories of software structure, referred to as “software types”,
+determined by computer languages and package formats in those languages; and</li>
+<li>Categories defining different types of statistical software, referred to as
+“statistical categories”.</li>
+</ol>
+<div id="software-types" class="section level2">
+<h2><span class="header-section-number">4.1</span> Software types</h2>
+<div id="languages" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Languages</h3>
+<p>This project extends existing an software peer-review process run by
+<a href="https://ropensci.org">rOpenSci</a>, and is primarily intended to target the <strong>R</strong>
+language. Nonetheless, given the popularity of Python in the field (see
+relevant analyses and notes in <a href="python.html#python">Appendix A</a>), the impact of developing
+standards applicable to Python packages must be considered. rOpenSci also has
+a close collaboration with its sister organization,
+<a href="https://www.pyopensci.org">pyOpenSci</a>.</p>
+<p>In addition it is particularly important to note that many <strong>R</strong> packages
+include code from a variety of other languages. The following table summarises
+statistics for the top ten languages from all 15,576 <a href="https://cran.r-project.org">CRAN</a>
+packages as of Tue May 05 2020 (including only code from
+the <code>/R</code>, <code>/src</code>, and <code>/inst</code> directories of each package).</p>
+<table>
+<caption><span id="tab:language-table">Table 4.1: </span>Proportion of code lines in different languages in all CRAN packages.</caption>
+<thead>
+<tr class="header">
+<th align="left">language</th>
+<th align="left">lines</th>
+<th align="right">proportion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">R</td>
+<td align="left">21,687,052</td>
+<td align="right">0.451</td>
+</tr>
+<tr class="even">
+<td align="left">C/C++ Header</td>
+<td align="left">6,438,969</td>
+<td align="right">0.134</td>
+</tr>
+<tr class="odd">
+<td align="left">HTML</td>
+<td align="left">4,774,583</td>
+<td align="right">0.099</td>
+</tr>
+<tr class="even">
+<td align="left">C</td>
+<td align="left">4,723,903</td>
+<td align="right">0.098</td>
+</tr>
+<tr class="odd">
+<td align="left">C++</td>
+<td align="left">4,391,283</td>
+<td align="right">0.091</td>
+</tr>
+<tr class="even">
+<td align="left">JavaScript</td>
+<td align="left">1,270,762</td>
+<td align="right">0.026</td>
+</tr>
+<tr class="odd">
+<td align="left">Fortran 77</td>
+<td align="left">798,821</td>
+<td align="right">0.017</td>
+</tr>
+<tr class="even">
+<td align="left">JSON</td>
+<td align="left">685,641</td>
+<td align="right">0.014</td>
+</tr>
+<tr class="odd">
+<td align="left">CSS</td>
+<td align="left">570,436</td>
+<td align="right">0.012</td>
+</tr>
+<tr class="even">
+<td align="left">Rmd</td>
+<td align="left">489,634</td>
+<td align="right">0.010</td>
+</tr>
+</tbody>
+</table>
+<p>Close to one half of all code in all R packages to date has been written in the
+R language, clearly justifying a primary focus upon that language. Collating
+all possible ways of packaging and combining C and C++ code yields
+15,554,155 lines or code or
+32% of all code, indicating that
+77% of all code has been
+written in either R or C/C++. Three of these top ten languages are likely
+related to web-based output (HTML, JavaScript, and CSS), representing a total
+of 14% of all code. While this is
+clearly a significant proportion, and while this <em>may</em> reflect an equivalent
+high frequency of code devoted to some form of web-based visualisation, these
+statistics represent <em>all</em> R packages. In many cases this represents extensive
+headers in supplementary documentation. There is no simple way to identify which
+of these might be considered statistical code in web-based languages, but knowing that there are
+packages exclusively constructed to generate web-based visualisations and documentation in
+a generic sense suggests that this value may be taken as an upper limit on
+the likely frequency of these types of visualisation packages (or parts thereof) in the
+context of statistical software.</p>
+<p><strong><em>Key considerations</em></strong>:</p>
+<ul>
+<li>Expansion into the Python ecosystem has great potential for impact, but goes
+beyond the general areas of expertise in the core ecosystem. (And Python code
+represents just
+162,339
+lines of code, or
+0.3%
+of all code within all R packages.)</li>
+<li>Compiled languages within R packages are core to many statistical
+applications; excluding them would exclude core functionality the project
+aims to addressed. The majority of compiled code is nevertheless C and/or
+C++, with Fortran representing under 2% of all code.</li>
+<li>Languages used for web-based visualisations comprise a significant proportion
+(14%) of all code. While this
+potentially indicates a likely importance of visualisation routines, this
+figure reflects general code in all R packages, and the corresponding
+proportion within the specific context of statistical software may be
+considerably lower.</li>
+<li>Any decision to include visualisation software and routines within our scope
+will likely entail an extension of linguistic scope to associated languages
+(HTML, JavaScript, and maybe CSS).</li>
+</ul>
+</div>
+<div id="structure" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Structure</h3>
+<p>R has a <a href="https://cran.r-project.org/doc/manuals/R-exts.html">well-defined
+system</a> for structuring
+software packages" Other forms of packaging <strong>R</strong> software may nevertheless be
+considered within scope. These may include</p>
+<ol style="list-style-type: decimal">
+<li>Python-like systems of <a href="https://github.com/klmr/modules">modules for <strong>R</strong></a>;</li>
+<li>Packaging appropriate for other languages (such as Python) yet with some
+interface with the R language;</li>
+<li>R interfaces (“wrappers”) to algorithms or software developed independently
+in different languages, and which may or may not be bundled as a standard
+R package; and</li>
+<li>Web applications such as Shiny packages.</li>
+</ol>
+<p><strong>Key considerations</strong>: Allowing non-package forms of code into the peer review
+system could potentially bring in a large pool of code typically published
+alongside scientific manuscripts, and web applications are a growing, new area
+of practice. However, there is far less standardization of code structure to
+allow for style guidelines and automated testing in these cases.</p>
+</div>
+</div>
+<div id="scope-categories" class="section level2">
+<h2><span class="header-section-number">4.2</span> Statistical Categories</h2>
+<p>As alluded to at the outset of this chapter, a primary task of this project
+will be to categorise statistical software in order to:</p>
+<ul>
+<li>Determine the extent to which software fits within scope</li>
+<li>Enable fields of application of software to be readily identified</li>
+<li>Enable determination of applicable standards</li>
+<li>Enable discernment of appropriate reviewers</li>
+</ul>
+<p>Different categories of statistical software will likely have different
+standards, yet there will nevertheless be general standards applicable
+regardless of categories.</p>
+<div id="examples-of-statistical-software" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Examples of Statistical Software</h3>
+<p>We now consider a few brief categorical examples, to illustrate the kinds of
+decisions such a process of categorisation will likely face.</p>
+<hr />
+<ul>
+<li><p><a href="https://github.com/ropensci/software-review/issues/334"><strong>gtsummary</strong></a>,
+submitted to rOpenSci and reject as out-of-scope.</p>
+<p>Creates presentation-ready tables summarizing data sets, regression models,
+and more. The code to create the tables is concise and highly
+customizable. Data frames can be summarized with any function,
+e.g. mean(), median(), even user-written functions. Regression models are
+summarized and include the reference rows for categorical variables.
+Common regression models, such as logistic regression and Cox proportional
+hazards regression, are automatically identified and the tables are
+pre-filled with appropriate column headers.</p>
+<p>This package appears not to contain any algorithmic implementations, yet is
+clearly aimed at enhancing a purely statistical workflow. Such a submission
+requires answering the question of whether software categorized as
+“workflow” only and which does not correspond to any other of the above
+categories, may be deemed in scope?</p></li>
+</ul>
+<hr />
+<ul>
+<li><p><a href="https://joss.theoj.org/papers/10.21105/joss.01601">greta: simple and scalable statistical modelling in
+R</a>, published in JOSS.</p>
+<p>greta is an package for statistical modelling in R (R Core Team, 2019) that
+has three core differences to commonly used statistical modelling software
+packages:</p>
+<ul>
+<li><p>greta models are written interactively in R code rather than in a
+&gt; compiled domain specific language.</p></li>
+<li><p>greta can be extended by other R packages; providing a fully-featured
+&gt; package management system for extensions.</p></li>
+<li><p>greta performs statistical inference using TensorFlow (Abadi et al.,
+&gt; 2015), enabling it to scale across modern high-performance computing
+&gt; systems.</p></li>
+</ul>
+<p>The <code>greta</code> package might be considered predominantly an interface to
+TensorFlow, yet it provides a new way to specify and work with purely
+statistical models. This might be considered under both workflow and wrapper
+categories, and serves here to illustrate the question of whether wrappers
+around, in this case, externally-installed software might be considered in
+scope? And if so, to what extent ought aspects of such externally-installed
+software also be directly addressed within a review process?</p></li>
+</ul>
+<hr />
+<ul>
+<li><p><a href="https://joss.theoj.org/papers/10.21105/joss.01798"><strong>modelStudio</strong></a>,
+published in JOSS.</p>
+<p>The <code>modelStudio</code>R package automates the process of model exploration. It
+generates advanced interactive and animated model explanations in the form
+of a serverless HTML site. It combines R(R Core Team, 2019) with D3.js
+(Bostock, 2016) to produce plots and descriptions for various local and
+global explanations. Tools for model exploration unite with tools for EDA
+to give a broad overview of the model behaviour.</p>
+<p>As with <code>gtsummary</code> above, this is clearly a package intended to enhance a
+workflow, and furthermore one which primarily serves to generate summary
+output as a <code>ht``ml</code> document, yet the models it considers, and all aspects
+of output produced, are purely statistical. This package could meet both
+workflow and visualization categories, and serves here to illustrate
+difficulties in considering the latter of these. The <code>D3.``js</code> library
+contains numerous indubitably statistical routines, and so this package
+might be argued to be a wrapper in the same category as <code>greta</code> is a wrapper
+around <code>TensorFlow</code>. An important question likely to arise in considering
+both of these is the extent to which the library being wrapped should also
+be <em>predominantly statistical</em> for a package to be in scope? (A requirement
+which <code>greta</code> would more easily fulfil than <code>gtsummary</code>.)</p></li>
+</ul>
+<hr />
+<p>We now consider potential categories within the general domain of statistical
+software. In order to derive a realistic categorisation, we used empirical data
+from several sources of potential software submissions, including all
+apparently “statistical” R packages published in the <a href="https://joss.theoj.org">Journal of Open Source
+Software (JOSS</a>), packages published in the <a href="https://www.jstatsoft.org/index">Journal of
+Statistical Software</a>, software presented at
+the 2018 and 2019 Joint Statistical Meetings (JSM), and Symposia on Data
+Science and Statistics (SDSS), well as CRAN task views. We have also compiled
+a list of the descriptions of <a href="https://github.com/mpadge/statistical-software/blob/master/abstracts/ropensci-abstracts.md">all packages rejected by
+rOpenSci</a>
+as being out of current scope because of current inability to consider
+statistical packages, along with a selection of <a href="https://github.com/mpadge/statistical-software/blob/master/abstracts/joss-abstracts.md">recent statistical
+R packages</a>
+accepted by JOSS. (The full list of all R package published by JOSS can be
+viewed at <a href="https://joss.theoj.org/papers//in/R" class="uri">https://joss.theoj.org/papers//in/R</a>).</p>
+<p>We allocated one or more key words (or phrases) to each abstract, and use the
+frequencies and inter-connections between these to inform the following
+categorisation are represented in the <a href="https://ropenscilabs.github.io/statistical-software/abstracts/network-terms/index.html">interactive
+graphic</a>
+(also included in the <a href="python.html#appendix-keywords">Appendix</a>), itself derived from
+analyses of abstracts from all statistical software submitted to both rOpenSci
+and JOSS. (Several additional analyses and graphical representations of these
+raw data are included an <a href="https://github.com/ropenscilabs/statistical-software">auxiliary github
+repository</a>.) The primary
+nodes that emerge from these empirical analyses (with associated <em>relative</em>
+sizes in parentheses) are shown in the following table.</p>
+<table>
+<caption><span id="tab:top-terms">Table 4.2: </span>Most frequent key words from all JOSS abstracts (N = 92) for statistical software. Proportions are scaled <em>per abstract</em>, with each abstract generally having multiple key words, and so sum of proportions exceeds one.</caption>
+<thead>
+<tr class="header">
+<th align="right">n</th>
+<th align="left">term</th>
+<th align="right">proportion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">ML</td>
+<td align="right">0.133</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">statistical indices and scores</td>
+<td align="right">0.111</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">visualization</td>
+<td align="right">0.111</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">dimensionality reduction</td>
+<td align="right">0.100</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">probability distributions</td>
+<td align="right">0.100</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">regression</td>
+<td align="right">0.100</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="left">wrapper</td>
+<td align="right">0.100</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">estimates</td>
+<td align="right">0.089</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="left">Monte Carlo</td>
+<td align="right">0.089</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="left">Bayesian</td>
+<td align="right">0.078</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="left">categorical variables</td>
+<td align="right">0.078</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="left">EDA</td>
+<td align="right">0.078</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="left">networks</td>
+<td align="right">0.078</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="left">summary statistics</td>
+<td align="right">0.067</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="left">survival</td>
+<td align="right">0.067</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="left">workflow</td>
+<td align="right">0.067</td>
+</tr>
+</tbody>
+</table>
+<p>The top key words and their inter-relationships within the main <a href="https://ropenscilabs.github.io/statistical-software/abstracts/network-terms/index.html">network
+diagram</a>
+were used to distinguish the following primary categories representing all
+terms which appear in over 5% of all abstracts, along with the two additional
+categories of “spatial” and “education”. We have excluded the key word
+“Estimates” as being too generic to usefully inform standards, and have also
+collected a few strongly-connected terms into single categories.</p>
+<table>
+<caption><span id="tab:methods-categories">Table 4.3: </span>Proposed categorisation of statistical software, with corresponding proportions of all JOSS software matching each category</caption>
+<thead>
+<tr class="header">
+<th align="right">n</th>
+<th align="left">term</th>
+<th align="right">proprtion</th>
+<th align="left">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">Bayesian &amp; Monte Carlo</td>
+<td align="right">0.167</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">dimensionality reduction &amp; feature selection</td>
+<td align="right">0.144</td>
+<td align="left">Commonly as a result of ML algorithms</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">ML</td>
+<td align="right">0.133</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">regression/splines/interpolation</td>
+<td align="right">0.133</td>
+<td align="left">Including function data analysis</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">statistical indices and scores</td>
+<td align="right">0.111</td>
+<td align="left">Software generally intended to produce specific indices or scores as statistical output</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">visualization</td>
+<td align="right">0.111</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="left">probability distributions</td>
+<td align="right">0.100</td>
+<td align="left">Including kernel densities, likelihood estimates and estimators, and sampling routines</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="left">wrapper</td>
+<td align="right">0.100</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="left">categorical variables</td>
+<td align="right">0.078</td>
+<td align="left">Including latent variables, and those output from ML algorithms. Note also that method for dimensionality reduction (such as clustering) often transform data to categorical forms.</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="left">Exploratory Data Analysis (EDA)</td>
+<td align="right">0.078</td>
+<td align="left">Including information statistics such as Akaike’s criterion, and techniques such as random forests. Often related to workflow software.</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="left">networks</td>
+<td align="right">0.078</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="left">summary statistics</td>
+<td align="right">0.067</td>
+<td align="left">Primarily related in the empirical data to regression and survival analyses, yet clearly a distinct category of its own.</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="left">survival</td>
+<td align="right">0.067</td>
+<td align="left">strongly related to EDA, yet differing in being strictly descriptive of software <em>outputs</em> whereas EDA may include routines to explore data <em>inputs</em> and other pre-output stages of analysis.</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="left">workflow</td>
+<td align="right">0.067</td>
+<td align="left">Often related to EDA, and very commonly also to ML.</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="left">spatial</td>
+<td align="right">0.033</td>
+<td align="left">Also an important intermediate node connecting several other nodes, yet defining its own distinct cluster reflecting a distinct area of expertise.</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="left">education</td>
+<td align="right">0.044</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>The full network diagram can then be reduced down to these categories only,
+with interconnections weighted by all first- and second-order interconnections
+between intermediate categories, to give the following, simplified diagram
+(in which “scores” denotes “statistical indices and scores”; with the diagram
+best inspected by dragging individual nodes to see their connections to
+others).</p>
+<div id="htmlwidget-aa5efd67888a3c96c9ff" style="width:672px;height:480px;" class="visNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aa5efd67888a3c96c9ff">{"x":{"nodes":{"label":["Bayes/MC","dimensionality reduction","ML","regression","scores","visualization","probability distributions","wrapper","categorical variables","EDA","networks","summary statistics","survival","workflow","education","spatial"],"value":[15,13,12,11,10,10,9,9,7,7,7,6,6,6,4,3],"id":["Bayes/MC","dimensionality reduction","ML","regression","scores","visualization","probability distributions","wrapper","categorical variables","EDA","networks","summary statistics","survival","workflow","education","spatial"]},"edges":{"from":["Bayes/MC","Bayes/MC","Bayes/MC","Bayes/MC","Bayes/MC","Bayes/MC","Bayes/MC","Bayes/MC","Bayes/MC","Bayes/MC","Bayes/MC","categorical variables","categorical variables","categorical variables","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","dimensionality reduction","EDA","EDA","EDA","EDA","EDA","EDA","EDA","education","education","education","education","education","education","education","ML","ML","ML","ML","ML","ML","ML","ML","networks","networks","probability distributions","regression","regression","scores","scores","summary statistics","summary statistics","summary statistics","survival","visualization","visualization","workflow"],"to":["EDA","education","ML","networks","regression","scores","spatial","summary statistics","survival","visualization","wrapper","ML","networks","scores","Bayes/MC","ML","regression","spatial","survival","visualization","workflow","education","ML","networks","summary statistics","visualization","workflow","wrapper","dimensionality reduction","ML","networks","summary statistics","visualization","workflow","wrapper","networks","probability distributions","regression","summary statistics","survival","visualization","workflow","wrapper","visualization","wrapper","regression","survival","visualization","visualization","workflow","visualization","workflow","wrapper","visualization","workflow","wrapper","wrapper"],"width":[5,5,5,5,5,5,5,5,5,5,5,2.36111111111111,2.36111111111111,2.36111111111111,3.88888888888889,3.88888888888889,3.88888888888889,3.88888888888889,3.88888888888889,3.88888888888889,3.88888888888889,2.77777777777778,2.77777777777778,2.77777777777778,2.77777777777778,2.77777777777778,2.77777777777778,2.77777777777778,1.66666666666667,1.66666666666667,1.66666666666667,1.66666666666667,1.66666666666667,1.66666666666667,1.66666666666667,2.5,2.5,2.5,2.5,2.5,2.5,2.5,2.5,0.972222222222222,0.972222222222222,0.555555555555556,1.66666666666667,1.66666666666667,0.694444444444444,0.694444444444444,0.694444444444444,0.694444444444444,0.694444444444444,0.277777777777778,0.416666666666667,0.416666666666667,0.138888888888889]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot"},"manipulation":{"enabled":false}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false},"byselection":{"enabled":false},"main":null,"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)"},"evals":[],"jsHooks":[]}</script>
+<p>We intend, at least initially, to use these categories to define and guide the
+assessment of statistical software. Standards considered under any of the
+ensuing categories must be developed with reference to inter-relationships
+between categories, and in particular to potential ambiguity within and between
+any categorisation. An example of such ambiguity, and of potential difficulties
+associated with categorisation, is the category of “network” software which
+appropriate describes the
+<a href="https://github.com/jakobbossek/grapherator"><code>grapherator</code></a> package (with
+accompanying <a href="https://joss.theoj.org/papers/10.21105/joss.00528">JOSS paper</a>)
+which is effectively a distribution generator for data represented in
+a particular format that happens to represent a graph; and three JSM
+presentations, one on <a href="https://ww2.amstat.org/meetings/jsm/2018/onlineprogram/AbstractDetails.cfm?abstractid=327171">network-based clustering of high-dimensional
+data</a>,
+one on <a href="https://ww2.amstat.org/meetings/jsm/2018/onlineprogram/AbstractDetails.cfm?abstractid=328764">community structure in dynamic
+networks</a>
+and one on <a href="https://ww2.amstat.org/meetings/jsm/2018/onlineprogram/AbstractDetails.cfm?abstractid=328764">Gaussian graphical
+models</a>.
+Standards derived for network software must accommodate such diversity of
+applications, and must accommodate software for which the “network” category
+may pertain only to some relatively minor aspect, while the primary algorithms
+or routines may not be related to network software in any direct way.</p>
+</div>
+<div id="bayesian-and-monte-carlo-routines" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Bayesian and Monte Carlo Routines</h3>
+<p>Packages implementing or otherwise relying on Bayesian or Monte Carlo routines
+represent form the central “hub” of all categories in the above diagram,
+indicating that even though this category is roughly equally common to other
+categories, software in this category is more likely to share more other
+categories. In other words, this is the leading “hybrid” category within which
+standards for all other categories must also be kept in mind. Some examples of
+software in this category include:</p>
+<ol style="list-style-type: decimal">
+<li>The <a href="https://joss.theoj.org/papers/10.21105/joss.01541"><code>bayestestR</code>
+package</a> “provides tools
+to describe … posterior distributions”</li>
+<li>The <a href="https://joss.theoj.org/papers/10.21105/joss.01143"><code>ArviZ</code> package</a> is
+a python package for exploratory analyses of Bayesian models, particularly
+posterior distributions.</li>
+<li>The <a href="https://joss.theoj.org/papers/10.21105/joss.00216"><code>GammaGompertzCR</code>
+package</a> features
+explicit diagnostics of MCMC convergence statistics.</li>
+<li>The <a href="https://joss.theoj.org/papers/10.21105/joss.00425"><code>BayesianNetwork</code>
+package</a> is in many ways
+a wrapper package primarily serving a <code>shiny</code> app, but also accordingly
+a package in both education and EDA categories.</li>
+<li>The <a href="https://joss.theoj.org/papers/10.21105/joss.01427"><code>fmcmc</code> package</a> is
+a “classic” MCMC package which directly provides its own implementation, and
+generates its own convergence statistics.</li>
+<li>The <a href="https://joss.theoj.org/papers/10.21105/joss.00739"><code>rsimsum</code> package</a>
+is a package to “summarise results from Monte Carlo simulation studies”.
+Many of the statistics generated by this package may prove useful in
+assessing and comparing Bayesian and Monte Carlo software in general. (See
+also the <a href="https://joss.theoj.org/papers/10.21105/joss.00640"><code>MCMCvis</code>
+package</a>, with more of
+a focus on visualisation.)</li>
+<li>The <a href="https://joss.theoj.org/papers/10.21105/joss.00061"><code>walkr</code> package</a> for
+“MCMC Sampling from Non-Negative Convex Polytopes” is indicative of the
+difficulties of deriving generally applicable assessments of software in
+this category, because MCMC <em>sampling</em> relies on fundamentally different
+inputs and outputs than many other MCMC routines.</li>
+</ol>
+<p><strong><em>Key Considerations</em></strong></p>
+<ul>
+<li>The extent to which the output of Bayesian routines with uninformative prior inputs can or do
+reflect equivalent frequentist analyses.</li>
+<li>Ways to standardise and compare diagnostic statistics for convergence of MCMC
+routines.</li>
+<li>Forms and structures of data using in these routines are very variable,
+likely making comparison among algorithms difficult.</li>
+</ul>
+</div>
+<div id="dimensionality-reduction-and-feature-selection" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> Dimensionality Reduction and Feature Selection</h3>
+<p>Many packages either implement or rely upon techniques for dimensionality
+reduction or feature selection. One of the primary problems presented by such
+techniques is that they are constrained to yield a result independent on any
+measure of correctness of accuracy <span class="citation">(Estivill-Castro <a href="#ref-estivill-castro_why_2002" role="doc-biblioref">2002</a>)</span>. This can make
+assessment of the accuracy or reliability of such routines difficult. Moreover,
+dimensionality reduction techniques are often developed for particular kinds of
+input data, reducing abilities to compare and contrast different
+implementations, as well as to compare them with any notional reference
+implementations.</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01596"><code>ivis</code></a> implements
+a dimensionality reduction technique using a "Siamese Neural Network
+architecture.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01279"><code>tsfeaturex</code></a> is
+a package to automate “time series feature extraction,” which also provides
+an example of a package for which both input and output data are generally
+incomparable with most other packages in this category.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01077"><code>iRF</code></a> is another
+example of a generally incomparable package within this category, here one
+for which the features extracted are the most distinct predictive features
+extracted from repeated iterations of random forest algorithms.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.00967"><code>compboost</code></a> is
+a package for component-wise gradient boosting which may be sufficient
+general to potentially allow general application to problems addressed by
+several packages in this category.</li>
+<li>The <a href="https://joss.theoj.org/papers/10.21105/joss.00786"><code>iml</code></a> package may
+offer usable functionality for devising general assessments of software
+within this category, through offering a “toolbox for making machine
+learning models interpretable” in a “model agnostic” way.</li>
+</ol>
+<p><strong><em>Key Considerations</em></strong></p>
+<ul>
+<li>It is often difficult to discern the accuracy of reliability of
+dimensionality reduction techniques.</li>
+<li>It is difficult to devise general routines to compare and assess different
+routines in this category, although possible starting points for the
+development of such may be offered by the
+<a href="https://joss.theoj.org/papers/10.21105/joss.00967"><code>compboost</code></a> and
+<a href="https://joss.theoj.org/papers/10.21105/joss.00786"><code>iml</code></a> packages.</li>
+</ul>
+</div>
+<div id="machine-learning" class="section level3">
+<h3><span class="header-section-number">4.2.4</span> Machine Learning</h3>
+<p>Machine Learning (ML) routines play a central role in modern statistical
+analyses, and the ML node in the above diagram is roughly equally central,
+and equally connected, to the Bayesian and Monte Carlo node. Machine Learning
+algorithms represent perhaps some of the most difficult algorithms for which to
+develop standards and methods of comparison. Both input and output data can be
+categorically different or even incomparable, while even where these may be
+comparable, the abiding aims of different ML algorithms can differ sufficiently
+to make comparison of outputs to otherwise equivalent inputs largely
+meaningless. A few potentially fruitful routes towards productive comparison
+may nevertheless be discerned, here according to the sub-domains of input data,
+output data, and algorithms.</p>
+<p><strong><em>Input Data</em></strong> One promising R package which may prove very useful for
+standardising and comparing data used as input to ML algorithms is the
+<a href="https://joss.theoj.org/papers/10.21105/joss.00584"><code>vtreat</code></a> package that
+“prepares messy real world data for predictive modeling in a reproducible and
+statistically sound manner.” The routines in this package perform a series of
+tests for general sanity of input data, and may prove generally useful as part
+of a recommended ML workflow.</p>
+<p><strong><em>Algorithms</em></strong> A number of packages attempt to offer unified interfaces to
+a variety of ML algorithms, and so may be used within the context of the
+present project either as potential recommended standards, or as ways by which
+different algorithms may be compared within a standard workflow. Foremost among
+such packages are
+<a href="https://joss.theoj.org/papers/10.21105/joss.01903"><code>mlr3</code></a>, which represents
+one of the core R packages for ML, developed by the key developers of previous
+generations of ML software in R. It offers a modular and extensible interface
+for a range of ML routines, and may prove very useful in comparing different ML
+routines and implementations.</p>
+<p><strong><em>Output Data</em></strong> There are several extant packages for (post-)processing data
+output from ML algorithms. Many, perhaps even most, of these primarily aim to
+derive insightful visualisations of output, whether in interactive
+(JavaScript-based) form, as with the
+<a href="https://joss.theoj.org/papers/10.21105/joss.01798"><code>modelStudio</code></a> or
+<a href="https://joss.theoj.org/papers/10.21105/joss.01444"><code>modelDown</code></a> packages, or
+more static plots using internal graphical routines from R, as in the <a href="https://joss.theoj.org/papers/10.21105/joss.00786"><code>iml</code>
+(Interpretable Machine
+Learning)</a> package. The
+latter package offers a host of additional functionality useful in interpreting
+the output of ML algorithms, and which may prove useful in general
+standards-based contexts.</p>
+<p>Potential “edge cases” which may be difficult to reconcile with the general
+aspects described above include the following:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01087"><code>ReinforcementLearning</code></a>
+is a simulation package employing ML routines to enable agents to learn
+through trial and error. It is an example of a package with inputs and
+outputs which may be difficult to compare with other ML software, and
+difficult to assess via general standards.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01193"><code>BoltzMM</code></a> is an
+implementation of a particular class of ML algorithms (“Boltmann Machines”),
+and so provides an obverse example to the above, for which in this case
+inputs and outputs may be compared in standard ways, yet the core algorithm
+may be difficult to compare.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01036"><code>dml</code></a> is a collection
+of different ML algorithms which perform the same task (“distance metric
+learning”). While comparing algorithms <em>within</em> the package is obviously
+straightforward, comparison in terms of external standards may not be.</li>
+</ol>
+</div>
+<div id="regression-and-interpolation" class="section level3">
+<h3><span class="header-section-number">4.2.5</span> Regression and Interpolation</h3>
+<p>This category represents the most important intermediate node in the above
+network graphic between ML and Bayesian/Monte Carlo algorithms, as well as
+being strongly connected to several other nodes. While many regression or
+interpolation algorithms are developed as part of general frameworks within
+these contexts, there are nevertheless sufficiently many examples of regression
+and interpolation algorithms unrelated to these contexts to warrant the
+existence of this distinct category. That said, algorithms within this category
+share very little in common, and each implementation is generally devised for
+some explicit applied purpose which may be difficult to relate to any other
+implementations in this category.</p>
+<p>Perhaps one feature which almost of the following examples share in common is
+input and output data in (potentially multi-dimensional) vector format, very
+generally (but not exclusively) in numeric form. This may be one category in
+which the development of a system for <a href="standards.html#overview-testing">property-based
+testing</a>, like the <a href="https://hypothesis.works"><code>hypothesis</code> framework for
+python</a> may be particularly useful. Such a system
+would facilitate tests in response to a range of differently input
+<em>structures</em>, such as values manifesting different distributional properties.
+Property-based testing is likely to be a particularly powerful technique for
+uncovering faults in regression and interpolation algorithms.</p>
+<p>Examples of the diversity of software in this category include the following.</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01761"><code>xrnet</code></a> to perform
+“hierarchical regularized regression to incorporate external data”, where
+“external data” in this case refers to structured meta-data as applied to
+genomic features.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01434"><code>survPen</code></a> is, “an
+R package for hazard and excess hazard modelling with multidimensional
+penalized splines”</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01221"><code>areal</code></a> is, “an
+R package for areal weighted interpolation”.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01287"><code>ChiRP</code></a> is a package
+for “Chinese Restaurant Process mixtures for regression and clustering”,
+which implements a class of non-parametric Bayesian Monte Carlo models.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.00722"><code>klrfome</code></a> is a package
+for, “kernel logistic regression on focal mean embeddings,” with a specific
+and exclusive application to the prediction of likely archaeological sites.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01038"><code>gravity</code></a> is a package
+for “estimation methods for gravity models in R,” where “gravity models”
+refers to models of spatial interactions between point locations based on
+the properties of those locations.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.00967"><code>compboost</code></a> is an
+example of an R package for gradient boosting, which is inherently
+a regression-based technique, and so standards for regression software
+ought to consider such applications.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.00937"><code>ungroup</code></a> is, “an
+R package for efficient estimation of smooth distributions from coarsely
+binned data.” As such, this package is an example of regression-based
+software for which the input data are (effectively) categorical. The
+package is primarily intended to implement a particular method for
+“unbinning” the data, and so represents a particular class of
+interpolation methods.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.00557"><code>registr</code></a> is
+a package for “registration for exponential family functional data,” where
+registration in this context is effectively an interpolation method
+applied within a functional data analysis context.</li>
+</ol>
+<p>One package which may be potential general use is the
+<a href="https://joss.theoj.org/papers/10.21105/joss.00772"><code>ggeffects</code></a> package for
+“tidy data frames of marginal effects from regression models.” This package
+aims to make statistics quantifying marginal effects readily understandable,
+and so implements a standard (tidyverse-based) methodology for representing and
+visualising statistics relating to marginal effects.</p>
+</div>
+<div id="statistical-indices-and-scores" class="section level3">
+<h3><span class="header-section-number">4.2.6</span> Statistical Indices and Scores</h3>
+<p>Many packages are designed to provide one or more specific statistical indices,
+scores, or summary statistics from some assumed type of input data. Methodology
+used to derive indices or scores may draw on many of the methods or algorithms
+considered in the first category above or are often field-specific, arithmetic
+calculations. Such software may likely be considered within its own category
+through a singular aim to provide particular indices or scores, in contrast
+with more generic “Methods and Algorithms” software which offers more
+abstraction or modeled approach. Some examples include:</p>
+<ol style="list-style-type: decimal">
+<li>The
+<a href="https://github.com/spatial-ews/spatialwarnings"><code>spatialwarnings</code> package</a> which provides “early-warning signal of
+ecosystem degradation,” where these signals and associated indices are
+highly domain-specific.</li>
+<li>The
+<a href="https://github.com/robwschlegel/heatwaveR"><code>heatsaveR</code> package</a> which calculates and displays marine heatwaves using
+specific indices established in previously-published literature.</li>
+<li>The
+<a href="https://github.com/pdwaggoner/hhi"><code>hhi</code> package</a> which calculates and visualizes “Herfindahl-Hirschman Index
+Scores,” which are measures of numeric concentration.</li>
+<li>The
+<a href="https://github.com/OttaviaE/DscoreApp"><code>DscoreApp</code> package</a> which provides an index (the “D-Score”) to quantify
+the results of
+<a href="https://en.wikipedia.org/wiki/Implicit-association_test">Implicit Association Tests</a>.</li>
+<li>The
+<a href="https://github.com/paul-buerkner/thurstonianIRT"><code>thurstonianIRT</code> package</a> (with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.01662">JOSS paper</a>) for score forced-choice questionnaires using
+<a href="https://en.wikipedia.org/wiki/Item_response_theory">“Item Response Theory”</a>.</li>
+</ol>
+<p><strong><em>Key Considerations</em></strong>: Such packages can generally be reviewed for correctness
+(or accuracy/precision) in comparison to pseudocode, reference implementations, or reference data sets
+and in this way have can be straightforwardly evaluated. More complex indices and
+scores will require many of the considerations in the “methods and algorithms”
+category above. In many cases,
+the field-specific nature of indices and scores may tightly tie the algorithm
+implementation to certain data input formats or workflows common to practitioners.
+They may have considerable overlap with workflow packages (below). There is
+also the possibility that some indices could be considered “trivial” arithmetic
+calculations. We may wish to consider some qualitative standard for additional
+utility that such packages would provide.</p>
+</div>
+<div id="visualisation" class="section level3">
+<h3><span class="header-section-number">4.2.7</span> Visualisation</h3>
+<p>While many may consider software primarily aimed at visualisation to be out of
+scope, there are nevertheless cases which may indeed be within scope, notably
+including the
+<a href="https://github.com/sinhrks/ggfortify"><code>ggfortify</code> package</a> which allows results of statistical tests to be
+“automatically” visualised using the
+<a href="https://ggplot2.tidyverse.org"><code>ggplot2</code> package</a>. The list of “fortified” functions on the packages
+<a href="https://github.com/sinhrks/ggfortify">webpage</a> clearly indicates the very predominantly statistical scope of this
+software which is in effect a package for statistical reporting, yet in visual
+rather than tabular form. Other examples of visualisation software include:</p>
+<ol style="list-style-type: decimal">
+<li>The
+<a href="https://github.com/ModelOriented/modelStudio"><code>modelStudio</code> package</a> (with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.01798">JOSS paper</a>), which is also very much a workflow package.</li>
+<li>The
+<a href="https://github.com/PsyChiLin/EFAshiny"><code>shinyEFA</code> package</a> (with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.00567">JOSS paper</a>) which provides a, “User-Friendly Shiny Application for
+Exploratory Factor Analysis.”</li>
+<li>The
+<a href="https://github.com/terrytangyuan/autoplotly"><code>autoplotly</code> package</a> (with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.00657">JOSS paper</a>) which provides, “Automatic Generation of Interactive
+Visualisations for Statistical Results”, primarily by porting the output of
+the authors’ above-mentioned
+<a href="https://github.com/sinhrks/ggfortify"><code>ggfortify</code> package</a> to
+<a href="https://github.com/plotly/plotly.js"><code>plotly.js</code></a>.</li>
+</ol>
+<p><strong><em>Key considerations</em></strong>: The quality or utility visualization techniques can
+be strongly subjective, but also may be evaluated using standardized principles
+if the community can come to a consensus on those principles. Such
+considerations may be context-dependent - e.g., the requirements of
+a diagnostic plot designed to support model-checking are different from that
+designed to present raw data or model results to a new audience. This implies
+that the intended purpose of the visualization should be well-defined.</p>
+<p>Whether or not visualization is in-scope, many software packages with other
+primary purposes also include functions to visualise output. Visualization will
+thus never be <em>strictly</em> out of scope. However one option is not to include
+<em>primarily</em> visualization packages, or only <em>statistical</em> visualization packages
+in which visualization is closely tied to another category or purpose.</p>
+<p>Visualisation packages will include numerical or statistical routines for
+transforming data from raw form to graphics, which can be evaluated for correctness
+or accuracy.</p>
+</div>
+<div id="probability-distributions" class="section level3">
+<h3><span class="header-section-number">4.2.8</span> Probability Distributions</h3>
+<p>The category of probability distributions is an outlier in the preceding
+network diagram, connected only to ML and regression/interpolation algorithms.
+The latter category was identified as one in which property-based testing was
+likely to be useful, within similar suggestions applying to the present
+category, particularly through enabling routines to be tested for robustness
+against a variety of perturbations to assumed distributional forms.</p>
+<p>Packages which fall exclusively within this category and not within any
+of the other categories considered here include:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01863"><code>univariateML</code></a> which
+is, “an R package for maximum likelihood estimation of univariate
+densities,” which support more than 20 different forms of probability
+density.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01566"><code>kdensity</code></a> which is,
+“An R package for kernel density estimation with parametric starts and
+asymmetric kernels.” This package implements an effectively non-parametric
+approach to estimating probability densities.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01023"><code>overlapping</code></a>, which
+is, “a R package for estimating overlapping in empirical distributions.”</li>
+</ol>
+<p>The obverse process from estimating or fitting probability distributions is
+arguably drawing samples from defined distributions, of which the
+<a href="https://joss.theoj.org/papers/10.21105/joss.00629"><code>humanleague</code></a> package is
+an example. This package has a particular application in synthesis of discrete
+populations, yet the implementation is quite generic and powerful.</p>
+</div>
+<div id="wrapper-packages" class="section level3">
+<h3><span class="header-section-number">4.2.9</span> Wrapper Packages</h3>
+<p>“Wrapper” packages provide an interface to previously-written software, often
+in a different computer language to the original implementation. While this
+category is reasonably unambiguous, there may be instances in which a “wrapper”
+additionally offers extension beyond original implementations, or in which only
+a portion of a package’s functionality may be “wrapped.” Rather than
+internally bundling or wrapping software, a package may also serve as a wrapper
+thorough providing access to some external interface, such as a web server.
+Examples of potential wrapper packages include the following:</p>
+<ol style="list-style-type: decimal">
+<li>The
+<a href="https://github.com/greta-dev/greta"><code>greta</code> package</a>
+(with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.01601">JOSS article</a>) “for
+writing statistical models and fitting them by MCMC and optimisation”
+provides a wrapper around google’s
+<a href="https://www.tensorflow.org"><code>TensorFlow</code> library</a>. It is also clearly a workflow package, aiming to
+provide a single, unified workflow for generic machine learning processes
+and analyses.</li>
+<li>The
+<a href="https://github.com/keblu/nse"><code>nse</code> package</a> (with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.00172">JOSS paper</a>) which
+offers “multiple ways to calculate numerical standard errors (NSE) of
+univariate (or multivariate in some cases) time series,” through providing
+a unified interface to several other R packages to provide more than 30 NSE
+estimators. This is an example of a wrapper package which does not wrap
+either internal code or external interfaces, rather it effectively “wraps”
+the algorithms of a collection of R packages.</li>
+</ol>
+<p><strong><em>Key Considerations</em></strong>: For many wrapper packages it may not be feasible
+for reviewers (or authors) to evaluate the quality or correctness of the wrapped
+software, so review could be limited to the interface or added value provided,
+or the statistical routines within.</p>
+<p>Wrapper packages include the extent of functionality represented by wrapped
+code, and the computer language being wrapped.
+- <em>Internal or External:</em> Does the software <em>internally</em> wrap of bundle
+previously developed routines, or does it provide a wrapper around some
+external service? If the latter, what kind of service (web-based, or some
+other form of remote access)?
+- <em>Language:</em> For internally-bundled routines, in which computer language
+e the routines written? And how are they bundled? (For R packages: In
+<code>./src</code>? In <code>./inst</code>? Elsewhere?)
+- <em>Testing:</em> Does the software test the correctness of the wrapped component?
+Does it rely on tests of the wrapped component elsewhere?
+- <em>Unique Advances:</em> What unique advances does the software offer beyond
+those offered by the (internally or externally) wrapped software?</p>
+</div>
+<div id="categorical-variables" class="section level3">
+<h3><span class="header-section-number">4.2.10</span> Categorical Variables</h3>
+<p>Like the category of probability distributions, software for categorical
+variables also represents an outlier category that nevertheless encapsulates
+unique software. This category is particularly prominent in software developed
+to support social sciences, and its inclusion may be justified on that basis
+alone: The mere inclusion of this category would open up the general process of
+peer-reviewing of statistical software to much broader areas of the social
+sciences than would be admissible without this category.</p>
+<p>Most software in this category generally takes categorical input data and
+outputs some form of quantitative response or summary statistic. Input data
+vary from quantitative intervals to discrete orders or ranks to (cross-)tables
+of categorical frequencies. Most packages seek to derive quantitative estimates
+from categorical inputs, although the various estimates are of course in no way
+comparable.</p>
+<p>It thus seems exceedingly difficult if not impossible to derive general
+standards for software in this category, even though we currently recommend
+inclusion because of the unique importance in the social sciences. Examples of
+software for categorical variables include the following.</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01796"><code>perccalc</code></a> is, “An
+R package for estimating percentiles from categorical variables”</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01508"><code>hopit</code></a> is “an
+R package for analysis of reporting behavior using generalized ordered probit
+models”. The input data are assumed to be ordered categorical variables
+typical of survey responses, and the package translates these into estimates
+of the equivalent continuous latent variables.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01764"><code>DscoreApp</code></a> is, “an
+user-friendly web application for computing the Implicit Association Test
+D-score,” where the stated score is a metric of association between
+categories elucidated in surveys or questionnaires.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01662"><code>thurstonianIRT</code></a>
+derives a score used to assess forced-choice questionnaires (in which
+answers must, for example, be either A or B).</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.00911"><code>qsort</code></a> provides “a new
+tool for scoring Q-sort Data”, where these data are derived by asking survey
+respondents to sort categories in some specified order. The input data in
+this case are thus the sorting orders, rather than the categories
+themselves.</li>
+</ol>
+<p>There is also software which takes quantitative input data and outputs discrete
+categorisations, as exemplified by the
+<a href="https://joss.theoj.org/papers/10.21105/joss.00893"><code>multistateutils</code></a> package,
+which is a biostatistical package useful for distinguishing and categorising
+dynamic trajectories (such as disease or treatment pathways).</p>
+<p>We propose to exclude this as an explicit category, reflecting an assumption
+that software within this category will generally able to be assessed under
+other categories listed here.</p>
+</div>
+<div id="networks" class="section level3">
+<h3><span class="header-section-number">4.2.11</span> Networks</h3>
+<p>Network software is a particular area of application of what might often be
+considered more generic algorithms, as in the example described above of the
+<a href="https://github.com/jakobbossek/grapherator"><code>grapherator</code></a> package, for which
+this category is appropriate only because the input data are assumed to
+represent a particular form of graphical relationship, while most of the
+algorithms implemented in the package are not necessarily specific to graphs.
+That package might nevertheless be useful in developing standards because it,
+“implements a modular approach to benchmark graph generation focusing on
+undirected, weighted graphs”. This package, and indeed several others developed
+by its author <a href="http://www.jakobbossek.de/blog/">Jakob Bossek</a>, may be useful in
+developing benchmarks for comparison of graph or network models and algorithms.</p>
+<p>Cases of software which might be assessed using such generic graph generators
+and benchmarks include:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.00374"><code>mcMST</code></a>, which is “a
+toolbox for the multi-criteria minimum spanning tree problem.”</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.00036"><code>gwdegree</code></a>, which is
+a package for, “improving interpretation of geometrically-weighted degree
+estimates in exponential random graph models.” This package essentially
+generates one key graph statistic from a particular class of input graphs,
+yet is clearly amenable to benchmarking, as well as measures of stability in
+response to variable input structures.</li>
+</ol>
+<p>Network software which is likely more difficult to assess or compare in any
+general way includes:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01480"><code>tcherry</code></a> is a package
+for “Learning the structure of tcherry trees,” which themselves are
+particular ways of representing relationships between categorical data. The
+package uses maximum likelihood techniques to find the best tcherry tree to
+represent a given input data set. Although very clearly a form of network
+software, this package might be considered better described by other
+categories, and accordingly not directly assessed or assessable under any
+standards derived for this category.</li>
+<li><a href="https://www.bnlearn.com/"><code>BNLearn</code></a> is a package “for learning the
+graphical structure of Bayesian networks.” It is indubitably a network
+package, yet the domain of application likely renders it incomparable to
+other network software, and difficult to assess in any standardised way.</li>
+</ol>
+</div>
+<div id="statistical-reporting-and-exploratory-data-analysis" class="section level3">
+<h3><span class="header-section-number">4.2.12</span> Statistical Reporting and Exploratory Data Analysis</h3>
+<p>Many packages aim to simplify and facilitate the reporting of complex
+statistical results or exploratory summaries of data. Such reporting commonly involves visualisation, and there
+is direct overlap between this and the Visualisation category (below). This roughly breaks out into software
+that summarizes and presents <em>raw</em> data, and software that reports complex data derived from statistical routines.
+However, this break is often not clean, as raw data exploration may involve an algorithmic or modeling step
+(e.g., projection pursuit.). Examples include:</p>
+<ol style="list-style-type: decimal">
+<li>A package rejected by rOpenSci as out-of-scope,
+<a href="https://github.com/ddsjoberg/gtsummary"><code>gtsummary</code></a>, which provides, “Presentation-ready data summary and analytic
+result tables.” Other examples include:</li>
+<li>The
+<a href="https://github.com/daya6489/SmartEDA"><code>smartEDA</code> package</a> (with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.01509">JOSS paper</a>) “for automated exploratory data analysis”. The package,
+“automatically selects the variables and performs the related descriptive
+statistics. Moreover, it also analyzes the information value, the weight of
+evidence, custom tables, summary statistics, and performs graphical
+techniques for both numeric and categorical variables.” This package is
+potentially as much a workflow package as it is a statistical reporting
+package, and illustrates the ambiguity between these two categories.</li>
+<li>The
+<a href="https://github.com/ShanaScogin/modeLLtest"><code>modeLLtest</code> package</a> (with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.01542">JOSS paper</a>) is “An R Package for Unbiased Model Comparison using Cross
+Validation.” Its main functionality allows different statistical models to
+be compared, likely implying that this represents a kind of meta package.</li>
+<li>The
+<a href="https://github.com/easystats/insight"><code>insight</code> package</a> (with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.01412">JOSS paper</a> provides “a unified interface to access information from
+model objects in R,” with a strong focus on unified and consistent reporting
+of statistical results.</li>
+<li>The
+<a href="https://github.com/arviz-devs/arviz"><code>arviz</code> software for python</a> (with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.01143">JOSS paper</a> provides “a unified library for exploratory analysis of
+Bayesian models in Python.”</li>
+<li>The
+<a href="https://github.com/sumbose/iRF"><code>iRF</code> package</a> (with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.01077">JOSS paper</a> enables “extracting interactions from random forests”, yet
+also focusses primarily on enabling interpretation of random forests through
+reporting on interaction terms.</li>
+</ol>
+<p>In addition to potential overlap with the Visualisation category, potential
+standards for Statistical Reporting and Meta-Software are likely to overlap to
+some degree with the preceding standards for Workflow Software. Checklist items
+unique to statistical reporting software might include the following:</p>
+<ul>
+<li><input type="checkbox" disabled="" />
+<strong>Automation</strong> Does the software automate aspects of statistical
+reporting, or of analysis at some sufficiently “meta”-level (such as variable
+or model selection), which previously (in a reference implementation)
+required manual intervention?</li>
+<li><input type="checkbox" disabled="" />
+<strong>General Reporting:</strong> Does the software report on, or otherwise provide
+insight into, statistics or important aspects of data or analytic processes
+which were previously not (directly) accessible using reference
+implementations?</li>
+<li><input type="checkbox" disabled="" />
+<strong>Comparison:</strong> Does the software provide or enable standardised
+comparison of inputs, processes, models, or outputs which could previously
+(in reference implementations) only be accessed or compared some comparably
+unstandardised form?</li>
+<li><input type="checkbox" disabled="" />
+<strong>Interpretation:</strong> Does the software facilitate interpretation of
+otherwise abstruse processes or statistical results?</li>
+<li><input type="checkbox" disabled="" />
+<strong>Exploration:</strong> Does the software enable or otherwise guide exploratory
+stages of a statistical workflow?</li>
+</ul>
+</div>
+<div id="survival-analyses" class="section level3">
+<h3><span class="header-section-number">4.2.13</span> Survival Analyses</h3>
+<p>Software for survival analyses obtains its own category here due to the
+relatively large number of packages. Survival analysis is a unique category
+only in that it concerns models to process, predict, or analyse time-to-event
+data. In many other ways software for survival analyses crosses over with many
+other categories (including the central ML and Bayes/Monte Carlo categories),
+with aspects presumably covered by standards developed in those respective
+categories. The
+<a href="https://joss.theoj.org/papers/10.21105/joss.00893"><code>multistateutils</code></a> package,
+for example, is a biostatistical package useful for distinguishing and
+categorising dynamic trajectories (such as disease or treatment pathways).
+Several routines within this package involve assigning these categories to
+states, and estimating times spent in various states. Although these are
+survival analyses in a strict sense, that software is likely more appropriate
+considered under other categories.</p>
+<p>Perhaps one thing much survival analysis software has in common is similarity
+of output, at least conceptually, in trying to quantify or predict times to
+some defined event of a dynamic processes. One package that may potentially be
+useful in interpreting and comparing the outputs of different survival routines
+is <a href="https://joss.theoj.org/papers/10.21105/joss.00961"><code>survxai</code></a>, which offers
+“structure-agnostic explanations of survival models,” whether survival neural
+networks, survival random forests, or any other approach.</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01593"><code>ccostr</code></a> “for
+estimating mean costs with censored data”</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01434"><code>survPen</code></a> “for hazard
+and excess hazard modelling with multidimensional penalized splines”, where
+hazard is interpreted as time-to-event in comparison with some baseline
+scenario.</li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.00216"><code>GammaGompertzCR</code></a> which
+fits “a Gamma-Gompertz survival model to capture-recapture data collected on
+free-ranging animal populations” (and was described under Bayesian and Monte
+Carlo software, above).</li>
+</ol>
+<p><strong><em>Key Considerations</em></strong> Although survival analysis is a common purpose of
+statistical software, general methodologies may be too diverse to permit
+general comparison and standardisation. This category of software nevertheless
+very generally overlaps strongly with other categories considered here,
+suggesting that this entire category may be safely excluded from consideration,
+with the presumption that primary functional of survival software will be
+addressed by standards devised under the other categories considered here.</p>
+<p><strong><em>Proposal</em></strong> This category be excluded from explicit consideration.</p>
+</div>
+<div id="workflow-support" class="section level3">
+<h3><span class="header-section-number">4.2.14</span> Workflow Support</h3>
+<p>“Workflow” software may not implement particular methods or algorithms,
+but rather support tasks around the statistical process. In many cases, these
+may be generic tasks that apply across methods. These include:</p>
+<ol style="list-style-type: decimal">
+<li>Classes (whether explicit or not) for representing or processing input and
+output data;</li>
+<li>Generic interfaces to multiple statistical methods or algorithms;</li>
+<li>Homogeneous reporting of the results of a variety of methods or algorithms;
+and</li>
+<li>Methods to synthesise, visualise, or otherwise collectively report on
+analytic results.</li>
+</ol>
+<p>Methods and Algorithms software may only provide a specific interface to
+a specific method or algorithm, although it may also be more general and offer
+several of the above “workflow” aspects, and so ambiguity may often arise
+between these two categories. We note in particular that the “workflow” node in
+the
+<a href="https://ropenscilabs.github.io/statistical-software/abstracts/network-terms">interactive network diagram</a>
+mentioned above is very strongly connected to the “machine learning” node,
+generally reflecting software which attempts to unify varied interfaces to
+varied platforms for machine learning.</p>
+<p>Among the numerous examples of software in this category are:</p>
+<ol style="list-style-type: decimal">
+<li>The
+<a href="https://github.com/mlr-org/mlr3"><code>mlr3</code> package</a> (with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.01903">JOSS paper</a>), which provides, “A modern object-oriented machine learning
+framework in R.”</li>
+<li>The
+<a href="https://github.com/USCbiostats/fmcmc"><code>fmcmc</code> package</a>
+(with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.01427">JOSS paper</a>), which provides a unified framework and workflow for
+Markov-Chain Monte Carlo analyses.</li>
+<li>The
+<a href="https://github.com/easystats/bayestestR"><code>bayestestR</code> package</a> (with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.01541">JOSS paper</a>)
+for "describing effects and their uncertainty, existence and significance
+within the Bayesian framework. While this packages includes its own
+algorithmic implementations, it is primarily intended to aid general
+Bayesian workflows through a unified interface.</li>
+</ol>
+<p>Workflows are also commonly required and developed for specific areas of
+application, as exemplified by the
+<a href="https://github.com/nfrerebeau/tabula"><code>tabular</code> package</a> (with accompanying
+<a href="https://joss.theoj.org/papers/10.21105/joss.01821">JOSS article</a> for “Analysis, Seriation, and visualisation of Archaeological
+Count Data”.</p>
+<p><strong><em>Key Considerations:</em></strong> Workflow packages are popular and add considerable value
+and efficiency for users. One challenge in evaluating such packages is the
+importance of API design and potential subjectivity of this. For instance,
+<code>mlr3</code> as well as <code>tidymodels</code> have similar uses of providing a common interface
+to multiple predictive models and tools for automating processes across these
+models. Similar, multiple packages have different approaches for handling MCMC
+data. Each package makes different choices in design and has different priorities,
+which may or may not agree with reviewers’ opinions or applications. Despite such
+differences, it may be possible to evaluate such packages for <em>internal</em> cohesion,
+and adherence to a sufficiently clearly stated design goal. Reviewers may be able
+to evaluate whether the package provides a <em>more</em> unified workflow or interface
+than other packages - this would require a standard of relative improvement over
+the field rather than baseline standards.</p>
+<p>These packages also often contain numerical routines (cross-validation,
+performance scoring, model comparison), that can be evaluated for correctness
+or accuracy.</p>
+</div>
+<div id="summary-statistics" class="section level3">
+<h3><span class="header-section-number">4.2.15</span> Summary Statistics</h3>
+<ol style="list-style-type: decimal">
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01509"><code>SmartEDA</code></a></li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01444"><code>modelDown</code></a></li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.01412"><code>insight</code></a></li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.00739"><code>rsimsum</code></a></li>
+<li><a href="https://joss.theoj.org/papers/10.21105/joss.00640"><code>MCMCvis</code></a></li>
+</ol>
+</div>
+<div id="spatial-analyses" class="section level3">
+<h3><span class="header-section-number">4.2.16</span> Spatial Analyses</h3>
+</div>
+<div id="education" class="section level3">
+<h3><span class="header-section-number">4.2.17</span> Education</h3>
+<p>A prominent class of statistical software is <em>educational</em> software designed to
+teach statistics. Such software many include its own implementations of statistical
+methods, and frequently include interactive components. Many examples of educational statistical software are
+listed on the
+<a href="https://cran.r-project.org/web/views/TeachingStatistics.html">CRAN Task View: Teaching Statistics</a>. This page also clearly indicates the
+likely strong overlap between education and visualisation software. With
+specific regard to the educational components of software, the follow checklist
+items may be relevant.
+A prominent example is the <a href="https://cran.r-project.org/web/packages/LearnBayes/index.html"><code>LearnBayes</code> package</a>.</p>
+<p><strong><em>Key Considerations:</em></strong> Correctness of implementation of educational or tutorial
+software is important. Evaluation of such software extends considerably beyond correctness,
+with heavy emphasis on documentation, interactive interface, and pedagogical soundness
+of the software. These areas enter a very different class of standards. It is
+likely that educational software will very greatly <em>structurally</em>, as interaction
+may be via graphical or web interfaces, text interaction or some other form.</p>
+<p>The <a href="https://jose.theoj.org">Journal of Open Source Education</a> accepts both educational
+software and curricula, and has a peer review system (almost)
+identical to <a href="https://joss.theoj.org">JOSS</a>. Educational statistical software
+reviewed by rOpenSci could thus potentially be fast-tracked through JOSE
+reviews just as current submissions have the opportunity to be fast-tracked
+through the JOSS review process.</p>
+<ul>
+<li><em>Demand:</em> Does the software meet a clear demand otherwise absent from
+educational material? If so, how?</li>
+<li><em>Audience:</em> What is the intended audience or user base? (For example,
+is the software intended for direct use by students of statistics, or does it
+provide a tool for educational professionals to use in their own practice?)</li>
+<li><em>Algorithms:</em> What are the unique algorithmic processes implemented by
+the software? In what ways are they easier, simpler, faster, or otherwise
+better than reference implementations (where such exist)?</li>
+<li><em>Interactivity:</em> Is the primary function of the software interactive?
+If so, is the interactivity primarily graphical (for example, web-based),
+text-based, or other?</li>
+</ul>
+</div>
+</div>
+<div id="proposals" class="section level2">
+<h2><span class="header-section-number">4.3</span> Proposals</h2>
+<ol style="list-style-type: decimal">
+<li>Peer review in the system will primarily focus on code written in R, C, and
+C++. Standards will be written so as to separate language-specific and
+non-language-specific components with an eye towards further adoption by
+other groups in the future (in particular groups focussed on the Python
+language).</li>
+<li>The system will be limited to R packages, and tools developed will be
+specific to R package structure, although keeping in mind potential future
+adaptation and adaptability to non-packaged R code. Standards that may apply
+to non-packaged are code may also be noted for use in other contexts.</li>
+<li>Submissions will be required to nominate at least one statistical category,
+to nominate at least one “reference implementation”, and to explain how the
+submitted software is superior (along with a possibility to explain why
+software may be sufficiently unique that there is no reference
+implementation, and so no claims of superiority can be made).</li>
+<li>We will only review packages where the primary statistical functionality is
+in the main source code developed by the authors, and not in an external
+package.<br />
+</li>
+<li>The following 11 categories of statistical software be defined, and be
+considered in scope:
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Bayesian and Monte Carlo algorithms</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>Dimensionality Reduction and Feature Selection</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Machine Learning</li>
+</ol></li>
+<li><ol start="4" style="list-style-type: decimal">
+<li>Regression and Interpolation</li>
+</ol></li>
+<li><ol start="5" style="list-style-type: decimal">
+<li>Probability Distributions</li>
+</ol></li>
+<li><ol start="6" style="list-style-type: decimal">
+<li>Wrapper Packages</li>
+</ol></li>
+<li><ol start="7" style="list-style-type: decimal">
+<li>Networks</li>
+</ol></li>
+<li><ol start="8" style="list-style-type: decimal">
+<li>Exploratory Data Analysis</li>
+</ol></li>
+<li><ol start="9" style="list-style-type: decimal">
+<li>Workflow Software</li>
+</ol></li>
+<li><ol start="10" style="list-style-type: decimal">
+<li>Summary Statistics</li>
+</ol></li>
+<li><ol start="11" style="list-style-type: decimal">
+<li>Spatial Statistics</li>
+</ol></li>
+</ul></li>
+<li>The following categories be considered, at least initially, to be
+out-of-scope:
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Educational Software</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>Visualisation Software</li>
+</ol></li>
+</ul></li>
+</ol>
+<p>Beyond these general <em>Proposals</em>, the following lists <em>Proposals</em> specific to
+particular categories of statistical software:</p>
+<ol style="list-style-type: decimal">
+<li>For packages which parameterise or fit probability distributions, develop
+routines to assess and quantify the sensitivity of outputs to the
+distributional properties of inputs, and particularly to deviations from
+assumed distributional properties.</li>
+<li>We identify a sub-category of software which accepts <em>network inputs</em>, and
+develop (or adapt) general techniques to generate generic graphs to be used
+in benchmarking routines. Other software which falls within the category of
+<em>Network Software</em> only because of restricted aspects such as internal data
+representations (such as <code>tcherry</code>) <em>not</em> be considered or assessed within
+that category.</li>
+</ol>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-estivill-castro_why_2002">
+<p>Estivill-Castro, Vladimir. 2002. “Why so Many Clustering Algorithms: A Position Paper.” <em>ACM SIGKDD Explorations Newsletter</em> 4 (1): 65–75. <a href="https://doi.org/10.1145/568574.568575">https://doi.org/10.1145/568574.568575</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="reading.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="standards.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": true,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ropenscilabs/statistical-software-peer-review/edit/master/scope.Rmd",
+"text": "Edit this chapter"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["statistical-software-peer-review.pdf"],
+"toc": {
+"collapse": "subsection"
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": false,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

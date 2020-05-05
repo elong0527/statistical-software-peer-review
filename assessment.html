@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Assessment | rOpenSci Statistical Software Peer Review</title>
+  <meta name="description" content="Chapter 6 Assessment | rOpenSci Statistical Software Peer Review" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Assessment | rOpenSci Statistical Software Peer Review" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://ropensci-blog-guidance.netlify.com/" />
+  
+  
+  <meta name="github-repo" content="ropenscilabs/statistical-software-peer-review" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Assessment | rOpenSci Statistical Software Peer Review" />
+  
+  
+  
+
+<meta name="author" content="Mark Padgham and Noam Ross" />
+
+
+<meta name="date" content="2020-05-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicon/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="standards.html"/>
+<link rel="next" href="lifeycle.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
+<script src="libs/vis-4.20.1/vis.min.js"></script>
+<script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://github.com/ropenscilabs/statistical-software-peer-review"><i class="fa fa-github"></i> Statistical Software Peer Review</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="2" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>2</b> Project Overview</a><ul>
+<li class="chapter" data-level="2.1" data-path="overview.html"><a href="overview.html#project-aims"><i class="fa fa-check"></i><b>2.1</b> Project Aims</a></li>
+<li class="chapter" data-level="2.2" data-path="overview.html"><a href="overview.html#related-projects-and-initiatives"><i class="fa fa-check"></i><b>2.2</b> Related projects and initiatives</a></li>
+<li class="chapter" data-level="2.3" data-path="overview.html"><a href="overview.html#outline-of-this-document"><i class="fa fa-check"></i><b>2.3</b> Outline of this document</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="overview.html"><a href="overview.html#scope-of-statistical-software-review"><i class="fa fa-check"></i><b>2.3.1</b> Scope of Statistical Software Review</a></li>
+<li class="chapter" data-level="2.3.2" data-path="overview.html"><a href="overview.html#standards-for-statistical-software"><i class="fa fa-check"></i><b>2.3.2</b> Standards for Statistical Software</a></li>
+<li class="chapter" data-level="2.3.3" data-path="overview.html"><a href="overview.html#software-assessment"><i class="fa fa-check"></i><b>2.3.3</b> Software Assessment</a></li>
+<li class="chapter" data-level="2.3.4" data-path="overview.html"><a href="overview.html#statistical-software-peer-review-process"><i class="fa fa-check"></i><b>2.3.4</b> Statistical Software Peer Review Process</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="overview.html"><a href="overview.html#community"><i class="fa fa-check"></i><b>2.4</b> Community</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reading.html"><a href="reading.html"><i class="fa fa-check"></i><b>3</b> Some Light Reading: An Annotated Bibliography</a><ul>
+<li class="chapter" data-level="3.1" data-path="reading.html"><a href="reading.html#books"><i class="fa fa-check"></i><b>3.1</b> Books</a></li>
+<li class="chapter" data-level="3.2" data-path="reading.html"><a href="reading.html#journal-articles"><i class="fa fa-check"></i><b>3.2</b> Journal Articles</a></li>
+<li class="chapter" data-level="3.3" data-path="reading.html"><a href="reading.html#technical-reports"><i class="fa fa-check"></i><b>3.3</b> Technical Reports</a></li>
+<li class="chapter" data-level="3.4" data-path="reading.html"><a href="reading.html#computer-programs"><i class="fa fa-check"></i><b>3.4</b> Computer Programs</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="reading.html"><a href="reading.html#computer-programs-testing"><i class="fa fa-check"></i><b>3.4.1</b> Computer Programs (Testing)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="reading.html"><a href="reading.html#web-pages"><i class="fa fa-check"></i><b>3.5</b> Web Pages</a></li>
+<li class="chapter" data-level="3.6" data-path="reading.html"><a href="reading.html#contributing-to-the-biblopgraphy"><i class="fa fa-check"></i><b>3.6</b> Contributing to the bibliography</a></li>
+</ul></li>
+<li class="part"><span><b>II Scope and Standards</b></span></li>
+<li class="chapter" data-level="4" data-path="scope.html"><a href="scope.html"><i class="fa fa-check"></i><b>4</b> <span style="color:red;">Scope [SEEKING FEEDBACK]<span></a><ul>
+<li class="chapter" data-level="4.1" data-path="scope.html"><a href="scope.html#software-types"><i class="fa fa-check"></i><b>4.1</b> Software types</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="scope.html"><a href="scope.html#languages"><i class="fa fa-check"></i><b>4.1.1</b> Languages</a></li>
+<li class="chapter" data-level="4.1.2" data-path="scope.html"><a href="scope.html#structure"><i class="fa fa-check"></i><b>4.1.2</b> Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="scope.html"><a href="scope.html#scope-categories"><i class="fa fa-check"></i><b>4.2</b> Statistical Categories</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="scope.html"><a href="scope.html#examples-of-statistical-software"><i class="fa fa-check"></i><b>4.2.1</b> Examples of Statistical Software</a></li>
+<li class="chapter" data-level="4.2.2" data-path="scope.html"><a href="scope.html#bayesian-and-monte-carlo-routines"><i class="fa fa-check"></i><b>4.2.2</b> Bayesian and Monte Carlo Routines</a></li>
+<li class="chapter" data-level="4.2.3" data-path="scope.html"><a href="scope.html#dimensionality-reduction-and-feature-selection"><i class="fa fa-check"></i><b>4.2.3</b> Dimensionality Reduction and Feature Selection</a></li>
+<li class="chapter" data-level="4.2.4" data-path="scope.html"><a href="scope.html#machine-learning"><i class="fa fa-check"></i><b>4.2.4</b> Machine Learning</a></li>
+<li class="chapter" data-level="4.2.5" data-path="scope.html"><a href="scope.html#regression-and-interpolation"><i class="fa fa-check"></i><b>4.2.5</b> Regression and Interpolation</a></li>
+<li class="chapter" data-level="4.2.6" data-path="scope.html"><a href="scope.html#statistical-indices-and-scores"><i class="fa fa-check"></i><b>4.2.6</b> Statistical Indices and Scores</a></li>
+<li class="chapter" data-level="4.2.7" data-path="scope.html"><a href="scope.html#visualisation"><i class="fa fa-check"></i><b>4.2.7</b> Visualisation</a></li>
+<li class="chapter" data-level="4.2.8" data-path="scope.html"><a href="scope.html#probability-distributions"><i class="fa fa-check"></i><b>4.2.8</b> Probability Distributions</a></li>
+<li class="chapter" data-level="4.2.9" data-path="scope.html"><a href="scope.html#wrapper-packages"><i class="fa fa-check"></i><b>4.2.9</b> Wrapper Packages</a></li>
+<li class="chapter" data-level="4.2.10" data-path="scope.html"><a href="scope.html#categorical-variables"><i class="fa fa-check"></i><b>4.2.10</b> Categorical Variables</a></li>
+<li class="chapter" data-level="4.2.11" data-path="scope.html"><a href="scope.html#networks"><i class="fa fa-check"></i><b>4.2.11</b> Networks</a></li>
+<li class="chapter" data-level="4.2.12" data-path="scope.html"><a href="scope.html#statistical-reporting-and-exploratory-data-analysis"><i class="fa fa-check"></i><b>4.2.12</b> Statistical Reporting and Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="4.2.13" data-path="scope.html"><a href="scope.html#survival-analyses"><i class="fa fa-check"></i><b>4.2.13</b> Survival Analyses</a></li>
+<li class="chapter" data-level="4.2.14" data-path="scope.html"><a href="scope.html#workflow-support"><i class="fa fa-check"></i><b>4.2.14</b> Workflow Support</a></li>
+<li class="chapter" data-level="4.2.15" data-path="scope.html"><a href="scope.html#summary-statistics"><i class="fa fa-check"></i><b>4.2.15</b> Summary Statistics</a></li>
+<li class="chapter" data-level="4.2.16" data-path="scope.html"><a href="scope.html#spatial-analyses"><i class="fa fa-check"></i><b>4.2.16</b> Spatial Analyses</a></li>
+<li class="chapter" data-level="4.2.17" data-path="scope.html"><a href="scope.html#education"><i class="fa fa-check"></i><b>4.2.17</b> Education</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="scope.html"><a href="scope.html#proposals"><i class="fa fa-check"></i><b>4.3</b> Proposals</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="standards.html"><a href="standards.html"><i class="fa fa-check"></i><b>5</b> Standards</a><ul>
+<li class="chapter" data-level="5.1" data-path="standards.html"><a href="standards.html#other-standards"><i class="fa fa-check"></i><b>5.1</b> Other Standards</a></li>
+<li class="chapter" data-level="5.2" data-path="standards.html"><a href="standards.html#generally-applicable-standards"><i class="fa fa-check"></i><b>5.2</b> Generally Applicable Standards</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="standards.html"><a href="standards.html#overview-testing"><i class="fa fa-check"></i><b>5.2.1</b> Testing</a></li>
+<li class="chapter" data-level="5.2.2" data-path="standards.html"><a href="standards.html#documentation"><i class="fa fa-check"></i><b>5.2.2</b> Documentation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="standards.html"><a href="standards.html#standards-specific-to-statistical-software"><i class="fa fa-check"></i><b>5.3</b> Standards Specific to Statistical Software</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="standards.html"><a href="standards.html#demonstration-of-innovation-novelty-or-advancement"><i class="fa fa-check"></i><b>5.3.1</b> Demonstration of innovation, novelty, or advancement</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="standards.html"><a href="standards.html#proposals-1"><i class="fa fa-check"></i><b>5.4</b> Proposals</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="assessment.html"><a href="assessment.html"><i class="fa fa-check"></i><b>6</b> Assessment</a><ul>
+<li class="chapter" data-level="6.1" data-path="assessment.html"><a href="assessment.html#general-software-metrics"><i class="fa fa-check"></i><b>6.1</b> General Software Metrics</a></li>
+<li class="chapter" data-level="6.2" data-path="assessment.html"><a href="assessment.html#metrics-specific-to-statistical-software"><i class="fa fa-check"></i><b>6.2</b> Metrics specific to statistical software</a></li>
+<li class="chapter" data-level="6.3" data-path="assessment.html"><a href="assessment.html#diagnostics-and-reporting"><i class="fa fa-check"></i><b>6.3</b> Diagnostics and Reporting</a></li>
+<li class="chapter" data-level="6.4" data-path="assessment.html"><a href="assessment.html#proposals-and-aims"><i class="fa fa-check"></i><b>6.4</b> Proposals and Aims</a></li>
+</ul></li>
+<li class="part"><span><b>III Software Review Process and Software Assessment</b></span></li>
+<li class="chapter" data-level="7" data-path="lifeycle.html"><a href="lifeycle.html"><i class="fa fa-check"></i><b>7</b> <span style="color:red;">Software Review and Life Cycle Models [Seeking Feedback]</span></a><ul>
+<li class="chapter" data-level="7.1" data-path="lifeycle.html"><a href="lifeycle.html#other-systems-for-software-and-peer-review"><i class="fa fa-check"></i><b>7.1</b> Other systems for software and peer review</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="lifeycle.html"><a href="lifeycle.html#ropensci"><i class="fa fa-check"></i><b>7.1.1</b> rOpenSci</a></li>
+<li class="chapter" data-level="7.1.2" data-path="lifeycle.html"><a href="lifeycle.html#the-journal-of-open-source-software"><i class="fa fa-check"></i><b>7.1.2</b> The Journal of Open Source Software</a></li>
+<li class="chapter" data-level="7.1.3" data-path="lifeycle.html"><a href="lifeycle.html#academic-journal-reviews"><i class="fa fa-check"></i><b>7.1.3</b> Academic Journal Reviews</a><ul>
+<li class="chapter" data-level="7.1.3.1" data-path="lifeycle.html"><a href="lifeycle.html#primary-and-secondary-editors"><i class="fa fa-check"></i><b>7.1.3.1</b> Primary and Secondary Editors</a></li>
+<li class="chapter" data-level="7.1.3.2" data-path="lifeycle.html"><a href="lifeycle.html#invited-and-mentored-submissions"><i class="fa fa-check"></i><b>7.1.3.2</b> Invited and Mentored Submissions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.1.4" data-path="lifeycle.html"><a href="lifeycle.html#the-debian-system"><i class="fa fa-check"></i><b>7.1.4</b> The Debian System</a></li>
+<li class="chapter" data-level="7.1.5" data-path="lifeycle.html"><a href="lifeycle.html#other-potential-models"><i class="fa fa-check"></i><b>7.1.5</b> Other Potential Models</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="lifeycle.html"><a href="lifeycle.html#software-life-cycle-considerations"><i class="fa fa-check"></i><b>7.2</b> Software Life Cycle Considerations</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="process.html"><a href="process.html"><i class="fa fa-check"></i><b>8</b> <span style="color:red;">The Review Process [SEEKING FEEDBACK]</span></a><ul>
+<li class="chapter" data-level="8.1" data-path="process.html"><a href="process.html#self-eval"><i class="fa fa-check"></i><b>8.1</b> Self-Evaluation of Software Prior to Submission</a></li>
+<li class="chapter" data-level="8.2" data-path="process.html"><a href="process.html#presub-comm"><i class="fa fa-check"></i><b>8.2</b> Pre-Submission Communication</a></li>
+<li class="chapter" data-level="8.3" data-path="process.html"><a href="process.html#reviewers-selection"><i class="fa fa-check"></i><b>8.3</b> Reviewers / Selection</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="process.html"><a href="process.html#database-of-potential-reviewers"><i class="fa fa-check"></i><b>8.3.1</b> Database of Potential Reviewers</a></li>
+<li class="chapter" data-level="8.3.2" data-path="process.html"><a href="process.html#automating-the-identification-of-potential-reviewers"><i class="fa fa-check"></i><b>8.3.2</b> Automating the Identification of Potential Reviewers</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="process.html"><a href="process.html#submission-phase"><i class="fa fa-check"></i><b>8.4</b> Submission</a></li>
+<li class="chapter" data-level="8.5" data-path="process.html"><a href="process.html#initial-screening"><i class="fa fa-check"></i><b>8.5</b> Initial Screening</a></li>
+<li class="chapter" data-level="8.6" data-path="process.html"><a href="process.html#review-process"><i class="fa fa-check"></i><b>8.6</b> Review Process</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="process.html"><a href="process.html#review-templates"><i class="fa fa-check"></i><b>8.6.1</b> Review Templates</a></li>
+<li class="chapter" data-level="8.6.2" data-path="process.html"><a href="process.html#category-specific-aspects-of-reviews"><i class="fa fa-check"></i><b>8.6.2</b> Category-Specific Aspects of Reviews</a></li>
+<li class="chapter" data-level="8.6.3" data-path="process.html"><a href="process.html#reviewer-recommendations"><i class="fa fa-check"></i><b>8.6.3</b> Reviewer Recommendations</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="process.html"><a href="process.html#review-acceptance"><i class="fa fa-check"></i><b>8.7</b> Acceptance / Scoring / Badging</a></li>
+<li class="chapter" data-level="8.8" data-path="process.html"><a href="process.html#post-acceptance-dissemination-publication-etc."><i class="fa fa-check"></i><b>8.8</b> Post-acceptance Dissemination, Publication, etc.</a></li>
+<li class="chapter" data-level="8.9" data-path="process.html"><a href="process.html#ongoing-maintenance"><i class="fa fa-check"></i><b>8.9</b> Ongoing Maintenance</a></li>
+<li class="chapter" data-level="8.10" data-path="process.html"><a href="process.html#structured-review-beyond-acceptance"><i class="fa fa-check"></i><b>8.10</b> Structured Review beyond Acceptance</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="python.html"><a href="python.html"><i class="fa fa-check"></i><b>A</b> Notes on Scope and the Python Statistical Ecosystem</a><ul>
+<li class="chapter" data-level="A.1" data-path="python.html"><a href="python.html#appendix-keywords"><i class="fa fa-check"></i><b>A.1</b> Analysis of statistical software keywords</a></li>
+<li class="chapter" data-level="A.2" data-path="python.html"><a href="python.html#bibliography"><i class="fa fa-check"></i><b>A.2</b> Bibliography</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Made with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">rOpenSci Statistical Software Peer Review</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="assessment" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Assessment</h1>
+<p>The preceding <a href="standards.html#standards"><em>Standards</em> section</a> primarily served (in its
+current form) to illustrate one possible approach to standards used to
+prospectively guide software during development. In contrast, the present
+section lists aspects of software, both general and specific to statistical
+software, which may usefully assessed in order to give insight into structure,
+function, and other aspects. The following list of assessments is ultimately
+intended to inform our development of a stand-alone tool, and potentially also
+a publicly available service, which can be used by any developers to assess
+their own software.</p>
+<p>We accordingly intend the following standards to be used both for retrospective
+purposes of peer review, and for prospective use in developing software both in
+general, and in preparation for peer-review. It is important to consider the
+applicability of each metric to different categories of statistical software,
+as well as the extent to which the following aspects may be more or less
+applicable or relevant at different phases of a software life cycle, or how
+expected values for, or results of applying, metrics may vary throughout
+a software life cycle.</p>
+<div id="general-software-metrics" class="section level2">
+<h2><span class="header-section-number">6.1</span> General Software Metrics</h2>
+<p>The following is an incomplete list of the kinds of metrics commonly used to
+evaluate software in general, and which might provide useful for assessing
+statistical software in the present project.</p>
+<ul>
+<li>Code structure
+<ul>
+<li>Cyclomatic complexity</li>
+<li>Codebase size</li>
+<li>Function size / number</li>
+<li>Numbers of external calls within functions</li>
+<li>Numbers and proportions of Exported / non exported functions</li>
+<li>Code consistency</li>
+<li>Dynamic metrics derived from function call networks or similar
+<ul>
+<li>Network-based metrics both for entire packages, for individual
+functions, and derived from analyses of test coverage</li>
+<li>Functional overlap with other packages</li>
+</ul></li>
+</ul></li>
+<li>Documentation metrics:
+<ul>
+<li>Numbers of documentation lines per function</li>
+<li>Proportion of documentation to code lines</li>
+<li>Presence of examples</li>
+<li>Vignettes</li>
+</ul></li>
+<li>Data documentation metrics
+<ul>
+<li>Intended and/or permitted kinds of input data</li>
+<li>Nature of output data</li>
+<li>Description of data used in tests</li>
+</ul></li>
+<li>Meta structure
+<ul>
+<li>Dependencies</li>
+<li>Reverse dependencies</li>
+</ul></li>
+<li>Meta metrics
+<ul>
+<li>License (type, availability, compatibility)</li>
+<li>Version control?</li>
+<li>Availability of website</li>
+<li>Availability of source code (beyond CRAN or similar)</li>
+<li>Community:
+<ul>
+<li>Software downloads and usage statistics</li>
+<li>Numbers of active contributors</li>
+<li>Numbers or rates of issues reported</li>
+</ul></li>
+<li>Maintenance:
+<ul>
+<li>Rate/Numbers of releases</li>
+<li>Rate of response to reported issues</li>
+<li>Last commit</li>
+<li>Commit rate</li>
+</ul></li>
+<li>stars (for github, gitlab, or equivalent for other platforms)</li>
+<li>forks</li>
+</ul></li>
+<li>Extent of testing
+<ul>
+<li>Code coverage</li>
+<li>Examples and their coverage</li>
+<li>Range of inputs tested</li>
+</ul></li>
+<li>Nature of testing
+<ul>
+<li>Testing beyond <code>R CMD check</code>?</li>
+<li>Testing beyond concrete testing?</li>
+</ul></li>
+</ul>
+</div>
+<div id="metrics-specific-to-statistical-software" class="section level2">
+<h2><span class="header-section-number">6.2</span> Metrics specific to statistical software</h2>
+<p>Metrics specific to statistical software will depend on, and vary in
+applicability or relevance with, the system for categorizing statistical
+software expected to emerge from the initial phase of this project. Details
+of this sub-section will be largely deferred until we have a clearer view of
+what categories might best be considered, which we are hopeful will emerge
+following the first committee meeting, and in response to ensuing feedback. In
+the meantime, metrics can be anticipated by referring to the preceding examples
+for categories of statistical software (numerical standards, method validity,
+software scope, and reference standards). We anticipate having a number of such
+categories, along with a number of corresponding metrics for assessing software
+in regard to each category. As mentioned at the outset, software will generally
+be expected to fit within multiple categories, and specific metrics will need
+to be developed to ensure validity for software encompassing any potential
+combination of categories.</p>
+</div>
+<div id="diagnostics-and-reporting" class="section level2">
+<h2><span class="header-section-number">6.3</span> Diagnostics and Reporting</h2>
+<p>While the preceding sub-sections considered <em>what</em> might be assessed in
+relation to statistical software, the project will also need to explicitly
+consider <em>how</em> any resultant assessment might best be presented and reported
+upon. Indeed, a key output of the project is expected to be a suite of tools
+which can be used both in this and other projects to construct, curate, and
+report upon a suite of peer-reviewed software. Moreover, we will aim to develop
+these tools partly to provide or enhance the <em>automation</em> of associated
+processes, aiming both to enhance adaptability and transferability, and to
+ensure the scalability of our own project.</p>
+<p>It is useful in this context to distinguish between <em>collective</em> tools useful
+for, of applicable to, collections of software, of individuals, or of processes
+pertaining to either (here, primarily peer review), and <em>singular</em> tools of
+direct applicability to individual pieces of software. We envision needing to
+address the (likely relative) importance of some of the following kinds of
+diagnostic and reporting tools which may be usefully developed.</p>
+<p><strong>Collective Tools</strong></p>
+<ul>
+<li>Qualitative tools useful in assessing or formalizing categories of software</li>
+<li>Quantitative tools to retrospectively assess such aspects as:
+<ul>
+<li>Collective “quality” of software</li>
+<li>Community engagement</li>
+<li>Effectiveness (or other metrics) of review</li>
+</ul></li>
+</ul>
+<p><strong>Singular Tools</strong></p>
+<ul>
+<li>Quantitative tools that can be prospectively used to
+<ul>
+<li>Improve or assure software quality</li>
+<li>Document aspects of software quality</li>
+<li>Aid modularity or transferability either of software, or of the tools
+themselves</li>
+</ul></li>
+<li>Tools to formalize structural aspects of software such as tests (for
+example, through implementing new frameworks or grammars)</li>
+<li>Extensions of extant packages such as <strong>lintr</strong>, <strong>covr</strong>, <strong>goodpractice</strong></li>
+<li>Comparisons of package metrics to distributions for other packages or
+systems (such as the CRAN archive directories)</li>
+<li>Diagnostic and report aggregation, design, or automatic creation at any
+stage before, during, or after peer review.</li>
+</ul>
+<p>The one question of abiding importance is the extent to which any such tools,
+and/or the automation of processes which they may enable, might enhance any of
+the following aspects:</p>
+<ul>
+<li>Software development</li>
+<li>Peer review of software</li>
+<li>Wider communities of users or developers</li>
+<li>The adaptation of our system to other domains</li>
+</ul>
+</div>
+<div id="proposals-and-aims" class="section level2">
+<h2><span class="header-section-number">6.4</span> Proposals and Aims</h2>
+<ol style="list-style-type: decimal">
+<li>We develop a system to automatically assess aspects of software detailed in
+the above list (and more).<br><strong>AIM:</strong> <em>To assess software in as much detail
+as possible, while reducing the burden on developers of manual assessment.</em></li>
+<li>The development of this system extend from the
+<a href="https://github.com/pharmar/riskmetric"><code>riskmetric</code></a> package developed by
+the <a href="https://pharmar.org">PharmaR group</a>.<br><strong>AIM:</strong> <em>To efficiently re-use
+work, prevent duplication, and develop our system as quickly as possible.</em></li>
+<li>We provide this assessment both as a stand-alone R package, and a publicly
+available service which receives text links to publicly available
+repositories (and does not enable upload of binary software).<br><strong>AIM:</strong>
+<em>To extend engagement with the present project beyond just those directly
+interested in submitting software for review, and so to enhance broader
+community engagement with both this project, and rOpenSci in general.</em></li>
+<li>Considerable effort be devoted to developing a coherent and adaptable system
+to summarise and report on software assessment.<br><strong>AIM:</strong> <em>To devise
+a reporting system which imposes a low cognitive burden on both developers
+and reviewers needing to assess packages.</em></li>
+<li>We simultaneously develop a system for assessing historical development of
+all available metrics, through applying our assessment system to all
+packages in the CRAN and bioconductor archives, and we use comparisons with
+these historical patterns to inform and guide our reporting
+system.<br><strong>AIM:</strong> <em>To ensure standards and assessments reflect enacted
+practices, rather than just theoretical assumptions, and to ensure that
+standards and assessments keep apace with ongoing developments of
+practices.</em></li>
+</ol>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="standards.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lifeycle.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": true,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ropenscilabs/statistical-software-peer-review/edit/master/assessment.Rmd",
+"text": "Edit this chapter"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["statistical-software-peer-review.pdf"],
+"toc": {
+"collapse": "subsection"
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": false,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

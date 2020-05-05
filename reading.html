@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Some Light Reading: An Annotated Bibliography | rOpenSci Statistical Software Peer Review</title>
+  <meta name="description" content="Chapter 3 Some Light Reading: An Annotated Bibliography | rOpenSci Statistical Software Peer Review" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Some Light Reading: An Annotated Bibliography | rOpenSci Statistical Software Peer Review" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://ropensci-blog-guidance.netlify.com/" />
+  
+  
+  <meta name="github-repo" content="ropenscilabs/statistical-software-peer-review" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Some Light Reading: An Annotated Bibliography | rOpenSci Statistical Software Peer Review" />
+  
+  
+  
+
+<meta name="author" content="Mark Padgham and Noam Ross" />
+
+
+<meta name="date" content="2020-05-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicon/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="overview.html"/>
+<link rel="next" href="scope.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/vis-4.20.1/vis.css" rel="stylesheet" />
+<script src="libs/vis-4.20.1/vis.min.js"></script>
+<script src="libs/visNetwork-binding-2.0.9/visNetwork.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://github.com/ropenscilabs/statistical-software-peer-review"><i class="fa fa-github"></i> Statistical Software Peer Review</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="2" data-path="overview.html"><a href="overview.html"><i class="fa fa-check"></i><b>2</b> Project Overview</a><ul>
+<li class="chapter" data-level="2.1" data-path="overview.html"><a href="overview.html#project-aims"><i class="fa fa-check"></i><b>2.1</b> Project Aims</a></li>
+<li class="chapter" data-level="2.2" data-path="overview.html"><a href="overview.html#related-projects-and-initiatives"><i class="fa fa-check"></i><b>2.2</b> Related projects and initiatives</a></li>
+<li class="chapter" data-level="2.3" data-path="overview.html"><a href="overview.html#outline-of-this-document"><i class="fa fa-check"></i><b>2.3</b> Outline of this document</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="overview.html"><a href="overview.html#scope-of-statistical-software-review"><i class="fa fa-check"></i><b>2.3.1</b> Scope of Statistical Software Review</a></li>
+<li class="chapter" data-level="2.3.2" data-path="overview.html"><a href="overview.html#standards-for-statistical-software"><i class="fa fa-check"></i><b>2.3.2</b> Standards for Statistical Software</a></li>
+<li class="chapter" data-level="2.3.3" data-path="overview.html"><a href="overview.html#software-assessment"><i class="fa fa-check"></i><b>2.3.3</b> Software Assessment</a></li>
+<li class="chapter" data-level="2.3.4" data-path="overview.html"><a href="overview.html#statistical-software-peer-review-process"><i class="fa fa-check"></i><b>2.3.4</b> Statistical Software Peer Review Process</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="overview.html"><a href="overview.html#community"><i class="fa fa-check"></i><b>2.4</b> Community</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="reading.html"><a href="reading.html"><i class="fa fa-check"></i><b>3</b> Some Light Reading: An Annotated Bibliography</a><ul>
+<li class="chapter" data-level="3.1" data-path="reading.html"><a href="reading.html#books"><i class="fa fa-check"></i><b>3.1</b> Books</a></li>
+<li class="chapter" data-level="3.2" data-path="reading.html"><a href="reading.html#journal-articles"><i class="fa fa-check"></i><b>3.2</b> Journal Articles</a></li>
+<li class="chapter" data-level="3.3" data-path="reading.html"><a href="reading.html#technical-reports"><i class="fa fa-check"></i><b>3.3</b> Technical Reports</a></li>
+<li class="chapter" data-level="3.4" data-path="reading.html"><a href="reading.html#computer-programs"><i class="fa fa-check"></i><b>3.4</b> Computer Programs</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="reading.html"><a href="reading.html#computer-programs-testing"><i class="fa fa-check"></i><b>3.4.1</b> Computer Programs (Testing)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="reading.html"><a href="reading.html#web-pages"><i class="fa fa-check"></i><b>3.5</b> Web Pages</a></li>
+<li class="chapter" data-level="3.6" data-path="reading.html"><a href="reading.html#contributing-to-the-biblopgraphy"><i class="fa fa-check"></i><b>3.6</b> Contributing to the bibliography</a></li>
+</ul></li>
+<li class="part"><span><b>II Scope and Standards</b></span></li>
+<li class="chapter" data-level="4" data-path="scope.html"><a href="scope.html"><i class="fa fa-check"></i><b>4</b> <span style="color:red;">Scope [SEEKING FEEDBACK]<span></a><ul>
+<li class="chapter" data-level="4.1" data-path="scope.html"><a href="scope.html#software-types"><i class="fa fa-check"></i><b>4.1</b> Software types</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="scope.html"><a href="scope.html#languages"><i class="fa fa-check"></i><b>4.1.1</b> Languages</a></li>
+<li class="chapter" data-level="4.1.2" data-path="scope.html"><a href="scope.html#structure"><i class="fa fa-check"></i><b>4.1.2</b> Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="scope.html"><a href="scope.html#scope-categories"><i class="fa fa-check"></i><b>4.2</b> Statistical Categories</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="scope.html"><a href="scope.html#examples-of-statistical-software"><i class="fa fa-check"></i><b>4.2.1</b> Examples of Statistical Software</a></li>
+<li class="chapter" data-level="4.2.2" data-path="scope.html"><a href="scope.html#bayesian-and-monte-carlo-routines"><i class="fa fa-check"></i><b>4.2.2</b> Bayesian and Monte Carlo Routines</a></li>
+<li class="chapter" data-level="4.2.3" data-path="scope.html"><a href="scope.html#dimensionality-reduction-and-feature-selection"><i class="fa fa-check"></i><b>4.2.3</b> Dimensionality Reduction and Feature Selection</a></li>
+<li class="chapter" data-level="4.2.4" data-path="scope.html"><a href="scope.html#machine-learning"><i class="fa fa-check"></i><b>4.2.4</b> Machine Learning</a></li>
+<li class="chapter" data-level="4.2.5" data-path="scope.html"><a href="scope.html#regression-and-interpolation"><i class="fa fa-check"></i><b>4.2.5</b> Regression and Interpolation</a></li>
+<li class="chapter" data-level="4.2.6" data-path="scope.html"><a href="scope.html#statistical-indices-and-scores"><i class="fa fa-check"></i><b>4.2.6</b> Statistical Indices and Scores</a></li>
+<li class="chapter" data-level="4.2.7" data-path="scope.html"><a href="scope.html#visualisation"><i class="fa fa-check"></i><b>4.2.7</b> Visualisation</a></li>
+<li class="chapter" data-level="4.2.8" data-path="scope.html"><a href="scope.html#probability-distributions"><i class="fa fa-check"></i><b>4.2.8</b> Probability Distributions</a></li>
+<li class="chapter" data-level="4.2.9" data-path="scope.html"><a href="scope.html#wrapper-packages"><i class="fa fa-check"></i><b>4.2.9</b> Wrapper Packages</a></li>
+<li class="chapter" data-level="4.2.10" data-path="scope.html"><a href="scope.html#categorical-variables"><i class="fa fa-check"></i><b>4.2.10</b> Categorical Variables</a></li>
+<li class="chapter" data-level="4.2.11" data-path="scope.html"><a href="scope.html#networks"><i class="fa fa-check"></i><b>4.2.11</b> Networks</a></li>
+<li class="chapter" data-level="4.2.12" data-path="scope.html"><a href="scope.html#statistical-reporting-and-exploratory-data-analysis"><i class="fa fa-check"></i><b>4.2.12</b> Statistical Reporting and Exploratory Data Analysis</a></li>
+<li class="chapter" data-level="4.2.13" data-path="scope.html"><a href="scope.html#survival-analyses"><i class="fa fa-check"></i><b>4.2.13</b> Survival Analyses</a></li>
+<li class="chapter" data-level="4.2.14" data-path="scope.html"><a href="scope.html#workflow-support"><i class="fa fa-check"></i><b>4.2.14</b> Workflow Support</a></li>
+<li class="chapter" data-level="4.2.15" data-path="scope.html"><a href="scope.html#summary-statistics"><i class="fa fa-check"></i><b>4.2.15</b> Summary Statistics</a></li>
+<li class="chapter" data-level="4.2.16" data-path="scope.html"><a href="scope.html#spatial-analyses"><i class="fa fa-check"></i><b>4.2.16</b> Spatial Analyses</a></li>
+<li class="chapter" data-level="4.2.17" data-path="scope.html"><a href="scope.html#education"><i class="fa fa-check"></i><b>4.2.17</b> Education</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="scope.html"><a href="scope.html#proposals"><i class="fa fa-check"></i><b>4.3</b> Proposals</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="standards.html"><a href="standards.html"><i class="fa fa-check"></i><b>5</b> Standards</a><ul>
+<li class="chapter" data-level="5.1" data-path="standards.html"><a href="standards.html#other-standards"><i class="fa fa-check"></i><b>5.1</b> Other Standards</a></li>
+<li class="chapter" data-level="5.2" data-path="standards.html"><a href="standards.html#generally-applicable-standards"><i class="fa fa-check"></i><b>5.2</b> Generally Applicable Standards</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="standards.html"><a href="standards.html#overview-testing"><i class="fa fa-check"></i><b>5.2.1</b> Testing</a></li>
+<li class="chapter" data-level="5.2.2" data-path="standards.html"><a href="standards.html#documentation"><i class="fa fa-check"></i><b>5.2.2</b> Documentation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="standards.html"><a href="standards.html#standards-specific-to-statistical-software"><i class="fa fa-check"></i><b>5.3</b> Standards Specific to Statistical Software</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="standards.html"><a href="standards.html#demonstration-of-innovation-novelty-or-advancement"><i class="fa fa-check"></i><b>5.3.1</b> Demonstration of innovation, novelty, or advancement</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="standards.html"><a href="standards.html#proposals-1"><i class="fa fa-check"></i><b>5.4</b> Proposals</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="assessment.html"><a href="assessment.html"><i class="fa fa-check"></i><b>6</b> Assessment</a><ul>
+<li class="chapter" data-level="6.1" data-path="assessment.html"><a href="assessment.html#general-software-metrics"><i class="fa fa-check"></i><b>6.1</b> General Software Metrics</a></li>
+<li class="chapter" data-level="6.2" data-path="assessment.html"><a href="assessment.html#metrics-specific-to-statistical-software"><i class="fa fa-check"></i><b>6.2</b> Metrics specific to statistical software</a></li>
+<li class="chapter" data-level="6.3" data-path="assessment.html"><a href="assessment.html#diagnostics-and-reporting"><i class="fa fa-check"></i><b>6.3</b> Diagnostics and Reporting</a></li>
+<li class="chapter" data-level="6.4" data-path="assessment.html"><a href="assessment.html#proposals-and-aims"><i class="fa fa-check"></i><b>6.4</b> Proposals and Aims</a></li>
+</ul></li>
+<li class="part"><span><b>III Software Review Process and Software Assessment</b></span></li>
+<li class="chapter" data-level="7" data-path="lifeycle.html"><a href="lifeycle.html"><i class="fa fa-check"></i><b>7</b> <span style="color:red;">Software Review and Life Cycle Models [Seeking Feedback]</span></a><ul>
+<li class="chapter" data-level="7.1" data-path="lifeycle.html"><a href="lifeycle.html#other-systems-for-software-and-peer-review"><i class="fa fa-check"></i><b>7.1</b> Other systems for software and peer review</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="lifeycle.html"><a href="lifeycle.html#ropensci"><i class="fa fa-check"></i><b>7.1.1</b> rOpenSci</a></li>
+<li class="chapter" data-level="7.1.2" data-path="lifeycle.html"><a href="lifeycle.html#the-journal-of-open-source-software"><i class="fa fa-check"></i><b>7.1.2</b> The Journal of Open Source Software</a></li>
+<li class="chapter" data-level="7.1.3" data-path="lifeycle.html"><a href="lifeycle.html#academic-journal-reviews"><i class="fa fa-check"></i><b>7.1.3</b> Academic Journal Reviews</a><ul>
+<li class="chapter" data-level="7.1.3.1" data-path="lifeycle.html"><a href="lifeycle.html#primary-and-secondary-editors"><i class="fa fa-check"></i><b>7.1.3.1</b> Primary and Secondary Editors</a></li>
+<li class="chapter" data-level="7.1.3.2" data-path="lifeycle.html"><a href="lifeycle.html#invited-and-mentored-submissions"><i class="fa fa-check"></i><b>7.1.3.2</b> Invited and Mentored Submissions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.1.4" data-path="lifeycle.html"><a href="lifeycle.html#the-debian-system"><i class="fa fa-check"></i><b>7.1.4</b> The Debian System</a></li>
+<li class="chapter" data-level="7.1.5" data-path="lifeycle.html"><a href="lifeycle.html#other-potential-models"><i class="fa fa-check"></i><b>7.1.5</b> Other Potential Models</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="lifeycle.html"><a href="lifeycle.html#software-life-cycle-considerations"><i class="fa fa-check"></i><b>7.2</b> Software Life Cycle Considerations</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="process.html"><a href="process.html"><i class="fa fa-check"></i><b>8</b> <span style="color:red;">The Review Process [SEEKING FEEDBACK]</span></a><ul>
+<li class="chapter" data-level="8.1" data-path="process.html"><a href="process.html#self-eval"><i class="fa fa-check"></i><b>8.1</b> Self-Evaluation of Software Prior to Submission</a></li>
+<li class="chapter" data-level="8.2" data-path="process.html"><a href="process.html#presub-comm"><i class="fa fa-check"></i><b>8.2</b> Pre-Submission Communication</a></li>
+<li class="chapter" data-level="8.3" data-path="process.html"><a href="process.html#reviewers-selection"><i class="fa fa-check"></i><b>8.3</b> Reviewers / Selection</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="process.html"><a href="process.html#database-of-potential-reviewers"><i class="fa fa-check"></i><b>8.3.1</b> Database of Potential Reviewers</a></li>
+<li class="chapter" data-level="8.3.2" data-path="process.html"><a href="process.html#automating-the-identification-of-potential-reviewers"><i class="fa fa-check"></i><b>8.3.2</b> Automating the Identification of Potential Reviewers</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="process.html"><a href="process.html#submission-phase"><i class="fa fa-check"></i><b>8.4</b> Submission</a></li>
+<li class="chapter" data-level="8.5" data-path="process.html"><a href="process.html#initial-screening"><i class="fa fa-check"></i><b>8.5</b> Initial Screening</a></li>
+<li class="chapter" data-level="8.6" data-path="process.html"><a href="process.html#review-process"><i class="fa fa-check"></i><b>8.6</b> Review Process</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="process.html"><a href="process.html#review-templates"><i class="fa fa-check"></i><b>8.6.1</b> Review Templates</a></li>
+<li class="chapter" data-level="8.6.2" data-path="process.html"><a href="process.html#category-specific-aspects-of-reviews"><i class="fa fa-check"></i><b>8.6.2</b> Category-Specific Aspects of Reviews</a></li>
+<li class="chapter" data-level="8.6.3" data-path="process.html"><a href="process.html#reviewer-recommendations"><i class="fa fa-check"></i><b>8.6.3</b> Reviewer Recommendations</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="process.html"><a href="process.html#review-acceptance"><i class="fa fa-check"></i><b>8.7</b> Acceptance / Scoring / Badging</a></li>
+<li class="chapter" data-level="8.8" data-path="process.html"><a href="process.html#post-acceptance-dissemination-publication-etc."><i class="fa fa-check"></i><b>8.8</b> Post-acceptance Dissemination, Publication, etc.</a></li>
+<li class="chapter" data-level="8.9" data-path="process.html"><a href="process.html#ongoing-maintenance"><i class="fa fa-check"></i><b>8.9</b> Ongoing Maintenance</a></li>
+<li class="chapter" data-level="8.10" data-path="process.html"><a href="process.html#structured-review-beyond-acceptance"><i class="fa fa-check"></i><b>8.10</b> Structured Review beyond Acceptance</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="python.html"><a href="python.html"><i class="fa fa-check"></i><b>A</b> Notes on Scope and the Python Statistical Ecosystem</a><ul>
+<li class="chapter" data-level="A.1" data-path="python.html"><a href="python.html#appendix-keywords"><i class="fa fa-check"></i><b>A.1</b> Analysis of statistical software keywords</a></li>
+<li class="chapter" data-level="A.2" data-path="python.html"><a href="python.html#bibliography"><i class="fa fa-check"></i><b>A.2</b> Bibliography</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Made with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">rOpenSci Statistical Software Peer Review</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="reading" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Some Light Reading: An Annotated Bibliography</h1>
+<p>Below is an annotated bibliography of sources that have been useful in developing
+this document and the statistical software peer-review standards. Note this page
+is auto-generated from a Zotero collection. See
+<a href="reading.html#contributing-to-the-biblopgraphy">Contributing to the Bibliography</a> below
+to add more sources.</p>
+<div id="books" class="section level2">
+<h2><span class="header-section-number">3.1</span> Books</h2>
+<p>There is an enormous wealth of books published on software review, software
+assessment (often referred to via concepts of “validation” and/or
+“verification”), and related concepts. Most importantly in the present context,
+almost all such books address closed-source, proprietary software, with no
+published books specifically dedicated to review or assessment of open-source
+software.</p>
+<hr />
+<p><em>Software testing automation tips: 50 things automation engineers should know.</em>
+<a href="http://www.books24x7.com/marc.asp?bookid=135445">Alpaev, Gennadiy ( 2017 ).</a>
+A neat list of just what the title suggests, grouped into general topics of Scripting, Testing, Environment, Running Logging Verifying, and Reviewing.</p>
+<hr />
+<p><em>Introduction to software testing.</em>
+<a href="">Ammann, Paul; and Offutt, Jeff ( 2017 ).</a>
+Has useful definitions of <em>Verification</em> as “The process of determining whether the
+products of a phase of the software development process fulfill the requirements established during the previous phase;” and  <em>Validation</em> as “The process of evaluating software at theend of software development to ensure compliance with intended usage.”</p>
+<p> </p>
+<p>Also includes extensive consideration of testing, in particular chapters on “Model-driven test design” (2), and “Writing Test Plans” (11).</p>
+<p> </p>
+<hr />
+<p><em>Software Verification and Validation: An Engineering and Scientific Approach.</em>
+<a href="https://www.springer.com/gp/book/9780387327259">Fisher, Marcus S. ( 2007 ).</a>
+Really useful considerations of risk as likelihood times consequence, with extensive worked examples of how these factors might be scaled (with most examples on simple four-point scales which prove to be sufficient to yield fruitful insight).</p>
+<p> </p>
+<hr />
+<p><em>Transparent Statistics Guidelines.</em>
+<a href="https://transparentstats.github.io/guidelines/index.html">Group (http://transparentstatistics.org/), Transparent Statistics in HCI Working ( ).</a>
+Currently only just begun, but aims to work towards what might be a very useful guide on how statistics might best be reported.</p>
+<hr />
+<p><em>Software Quality Approaches: Testing, Verification, and Validation: Software Best Practice 1.</em>
+<a href="https://doi.org/10.1007/978-3-642-56612-7">Haug, Michael; Olsen, Eric W; and Consolini, Luisa ( 2001 ).</a>
+A huge EU project, drawn from results of a host of “Process Improvement Experiments” (PIEs), all of which were controlled experiments built on a generic model, and involved manipulating some standard baseline practice and analysing effects.</p>
+<p> </p>
+<hr />
+<p><em>Software testing: concepts and operations.</em>
+<a href="">Mili, Ali ( 2015 ).</a>
+Describes some problems facing modern software development (p9), including “Absence of Reuse Practice”, and lack of standard software architecture. Neither of these are applicable to R packages. Then goes on to describe (p11) “The Absence of Automation”, and “Limited Quality Control”, both of which are definitely still applicable.</p>
+<hr />
+<p><em>The art of software testing.</em>
+<a href="">Myers, Glenford J; Badgett, Tom; and Sandler, Corey ( 2012 ).</a>
+Glenford Myers originally published “The Art of Software Testing” in 1979. Most of the book is either pretty straightforward, or overly specific to be able to be directly transferred or translated to open source software.</p>
+<p> </p>
+<hr />
+<p><em>Conventions for R Modeling Packages.</em>
+<a href="https://tidymodels.github.io/model-implementation-principles/">tidyverse ( ).</a>
+“The goal of this document is to define a specification for creating functions and packages for
+new modeling packages
+. These are opinionated specifications but are meant to reflect reasonable positions for standards based on prior experience. A number of these guidelines are specific to the tidyverse (e.g. “Function names should use snake_case instead of camelCase.”). However, the majority are driven by common sense and good design principles (e.g. “All functions must be reproducible from run-to-run.”)."</p>
+<hr />
+<p><em>Medical device software verification, validation and compliance.</em>
+<a href="http://site.ebrary.com/id/10436227">Vogel, David A ( 2011 ).</a>
+In spite of the applied focus, a highly relevant and insightful book. Of particular relevance are the extensive considerations of software lifecycles, verification and validation and associated metrics, and considerations of software testing in relation to the US FDA’s General Principles of Software Validation.0</p>
+<hr />
+<p><em>The tidyverse style guide.</em>
+<a href="https://style.tidyverse.org/">Wickham, Hadley ( ).</a>
+“All style guides are fundamentally opinionated. Some decisions genuinely do make code easier to use (especially matching indenting to programming structure), but many decisions are arbitrary. The most important thing about a style guide is that it provides consistency, making code easier to write because you need to make fewer decisions.”</p>
+<hr />
+</div>
+<div id="journal-articles" class="section level2">
+<h2><span class="header-section-number">3.2</span> Journal Articles</h2>
+<hr />
+<p><em>Reconciling modern machine learning practice and the bias-variance trade-off.</em>
+<a href="http://arxiv.org/abs/1812.11118">Belkin, Mikhail; Hsu, Daniel; Ma, Siyuan; and Mandal, Soumik ( 2019-09-10 ). arXiv:1812.11118 [cs, stat]</a>
+A very good reference for the ubiquity of over-fitting in machine learning algorithms, which is nevertheless mostly dedicated to demonstrating a very practical approach to overcoming over-fitting.</p>
+<hr />
+<p><em>Datasheets for Datasets.</em>
+<a href="http://arxiv.org/abs/1803.09010">Gebru, Timnit; Morgenstern, Jamie; Vecchione, Briana; Vaughan, Jennifer Wortman; Wallach, Hanna; Daumeé III, Hal; and Crawford, Kate ( 2019-04-14 ). arXiv:1803.09010 [cs]</a>
+Comment: Working Paper, comments are encouraged</p>
+<hr />
+<p><em>Four simple recommendations to encourage best practices in research software.</em>
+<a href="https://f1000research.com/articles/6-876/v1">Jiménez, Rafael C.; Kuzak, Mateusz; Alhamdoosh, Monther; Barker, Michelle; Batut, Bérénice; Borg, Mikael; Capella-Gutierrez, Salvador; Chue Hong, Neil; Cook, Martin; Corpas, Manuel; Flannery, Madison; Garcia, Leyla; Gelpí, Josep Ll.; Gladman, Simon; Goble, Carole; González Ferreiro, Montserrat; Gonzalez-Beltran, Alejandra; Griffin, Philippa C.; Grüning, Björn; Hagberg, Jonas; Holub, Petr; Hooft, Rob; Ison, Jon; Katz, Daniel S.; Leskošek, Brane; López Gómez, Federico; Oliveira, Luis J.; Mellor, David; Mosbergen, Rowland; Mulder, Nicola; Perez-Riverol, Yasset; Pergl, Robert; Pichler, Horst; Pope, Bernard; Sanz, Ferran; Schneider, Maria V.; Stodden, Victoria; Suchecki, Radosław; Svobodová Vařeková, Radka; Talvik, Harry-Anton; Todorov, Ilian; Treloar, Andrew; Tyagi, Sonika; van Gompel, Maarten; Vaughan, Daniel; Via, Allegra; Wang, Xiaochuan; Watson-Haigh, Nathan S.; and Crouch, Steve ( 2017-6-13 ). F1000Research: 876</a>
+The four recommendations are:</p>
+<ol style="list-style-type: decimal">
+<li><p>Make source code publicly accessible from day one</p></li>
+<li><p>Make software easy to discover by providing software metadata via a popular community registry</p></li>
+<li><p>Adopt a licence and comply with the licence of third-party dependencies</p></li>
+<li><p>Define clear and transparent contribution, governance, and communication processes</p></li>
+</ol>
+<hr />
+<p><em>Towards FAIR principles for research software.</em>
+<a href="https://content.iospress.com/articles/data-science/ds190026">Lamprecht, Anna-Lena; Garcia, Leyla; Kuzak, Mateusz; Martinez, Carlos; Arcila, Ricardo; Martin Del Pico, Eva; Dominguez Del Angel, Victoria; van de Sandt, Stephanie; Ison, Jon; Martinez, Paula Andrea; McQuilton, Peter; Valencia, Alfonso; Harrow, Jennifer; Psomopoulos, Fotis; Gelpi, Josep Ll; Chue Hong, Neil; Goble, Carole; and Capella-Gutierrez, Salvador ( 2019/01/01 ). Data Science (Preprint): 1-23</a>
+An important reference for adapting FAIR (Findability, Accessibility, Interoperability, and Reusability) principles to software. All of these principles are effectively already met by rOpenSci’s current review system, noting in particular that the majority of them pertain to the creation, existence, and curation of metadata.</p>
+<hr />
+<p><em>Data Management Lifecycle and Software Lifecycle Management in the Context of Conducting Science.</em>
+<a href="http://openresearchsoftware.metajnl.com/articles/10.5334/jors.ax/">Lenhardt, W.; Ahalt, Stanley; Blanton, Brian; Christopherson, Laura; and Idaszak, Ray ( 2014-07-09 ). Journal of Open Research Software (1): e15</a>
+A relatively brief exploration of parallels between relatively well-established notions of lifecycle in regard to data management and curation, and less-established considerations of lifecycle in regard to software. Primarily an argument curation of appropriate metadata, it makes frequent reference to a variety of ISO standards.</p>
+<hr />
+</div>
+<div id="technical-reports" class="section level2">
+<h2><span class="header-section-number">3.3</span> Technical Reports</h2>
+<hr />
+<p><em>Software Evaluation Guide | Software Sustainability Institute.</em>
+<a href="https://www.software.ac.uk/resources/guides-everything/software-evaluation-guide">Jackson, Mike; Crouch, Steve; and Baxter, Rob ( 2011 ).</a>
+Divides considerations into the following categories and sub-categories:</p>
+<p> </p>
+<ol style="list-style-type: decimal">
+<li>Usability</li>
+</ol>
+<p>    - 1.1 Understandability</p>
+<p>    - 1.2 Documentation</p>
+<p>    - 1.3 Learnability</p>
+<p>    - 1.4 Buildability</p>
+<p>    - 1.5 Installability</p>
+<p>    - 1.6 Performance</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Sustainability &amp; Maintainability</li>
+</ol>
+<p>    - 2.1 Identity</p>
+<p>    - 2.2 Copyright &amp; Licensing</p>
+<p>    - 2.3 Accessibility</p>
+<p>    - 2.4 Community</p>
+<p>    - 2.5 Testability</p>
+<p>    - 2.6 Portability</p>
+<p>    - 2.7 Supportability</p>
+<p>    - 2.8 Analysability</p>
+<p>    - 2.9 Changeability</p>
+<p>    - 2.10 Reusability</p>
+<p>    - 2.11 Security &amp; Privacy</p>
+<p>    - 2.12 Interoperability</p>
+<p>    - 2.13 Governance</p>
+<p> </p>
+<p>The main document divides each of these into numerous explicit categories, with the resultant document serving as likely a useful comparison or contrast to the Core Infrastructure Best Practices checklist.</p>
+<hr />
+<p><em>Automated Source Code CISQ Maintainability Measure Specification Version 1.0.</em>
+<a href="https://www.omg.org/spec/ASCMM/">Objcect Management Group ( 2016 ).</a>
+Considers a number of very specific metrics, including the following:</p>
+<ol style="list-style-type: decimal">
+<li><p>Control Flow Transfer Control Element outside Switch Block</p></li>
+<li><p>Class Element ExcessiveInheritance of Class Elements with Concrete Implementation</p></li>
+<li><p>Storable and Member DataElement Initialization with Hard-Coded Literals</p></li>
+<li><p>Callable and Method ControlElement Number of Outward Calls</p></li>
+<li><p>Loop Value Update within the Loop</p></li>
+<li><p>Commented-out Code Element Excessive Volume (with default threshold of 2%)</p></li>
+<li><p>Inter-Module Dependency Cycles</p></li>
+<li><p>Source Element Excessive Size (with default of 1,000 lines per file)</p></li>
+<li><p>Horizontal Layer Excessive Number (with default of 8)</p></li>
+<li><p>Named Callable and Method Control Element Multi-Layer Span (“Avoid unclear allocation of software elements to a single architectural layer”)</p></li>
+<li><p>Callable and Method Control Element Excessive Cyclomatic Complexity Value (with default threshold of 20).</p></li>
+<li><p>Named Callable and Method Control Element with Layer-Skipping Call (Aim: Avoid calls from an upper layer to lower layers that are not adjacent).</p></li>
+<li><p>Callable and Method Control Element Excessive Number of Parameters (with default threshold of 7)</p></li>
+<li><p>Callable and Method Control Element Excessive Number of Control Elements Involving Data Element from Data Manager or File Resource (Aim: Reduce numbers of external data dependencies, with default threshold of 7).</p></li>
+<li><p>Public Member Element</p></li>
+<li><p>Method Control Element Usage of Member Element from other Class Element</p></li>
+<li><p>Class Element Excessive Inheritance Level (with default threshold of 7)</p></li>
+<li><p>Class Element Excessive Number of Children (with default threshold of 10)</p></li>
+<li><p>Named Callable and Method Control Element Excessive Similarity (based on assessment of numbers of identical compiled tokens within a unit)</p></li>
+<li><p>Unreachable Named Callable or Method Control Element (Aim: Avoid inactive code blocks)</p></li>
+</ol>
+<hr />
+<p><em>ESIP Software Guidelines Draft.</em>
+<a href="https://esipfed.github.io/Software-Assessment-Guidelines/guidelines.html">Scott, Soren ( 2016 ).</a>
+Earth Science Information Partners (ESIP) guidelines, divided among the primary categories of</p>
+<ol style="list-style-type: decimal">
+<li>Sustainable Code</li>
+</ol>
+<p>    1.1 Clean, standardized code</p>
+<p>    1.2 Versioned code</p>
+<p>    1.3 Redistributable</p>
+<p>    1.4 Tested</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Interoperable</p></li>
+<li><p>Usable</p></li>
+</ol>
+<p>    3.1 Clear, understandable interface</p>
+<p>    3.2 Performant and stable</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Documented</li>
+</ol>
+<p>    4.1 Source code is documented</p>
+<p>    4.2 Codebase includes documentation to support adaptation and reuse</p>
+<p>    4.3 Software is documented</p>
+<p>    4.4 Code or software requirements are documented</p>
+<p>    4.5 Project is documented</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Secure</p></li>
+<li><p>Shareable</p></li>
+<li><p>Governed</p></li>
+</ol>
+<p>    7.1 Contribution policies are provided</p>
+<p>    7.2 Development activities are transparent</p>
+<ol start="8" style="list-style-type: decimal">
+<li>Progression, sustainability, and reusability/adoption</li>
+</ol>
+<hr />
+<p><em>CLARIAH/software-quality-guidelines.</em>
+<a href="https://github.com/CLARIAH/software-quality-guidelines">van Gompel, Maarten; Noordzij, Jauco; de Valk, Reinier; and Scharnhorst, Andrea ( 2016 ).</a>
+Divides considerations into the categories and sub-categories derived by the <a href="https://www.software.ac.uk/resources/guides-everything/software-evaluation-guide">Software Sustainability Institute</a>
+in 2011.</p>
+<p>Each of these has several explicit sub-components, with each of them scored on a 5-point scale. The entire document provides an outstandingly strong and usable reference or benchmark from which a set of standards for software quality might be adapted.</p>
+<hr />
+</div>
+<div id="computer-programs" class="section level2">
+<h2><span class="header-section-number">3.4</span> Computer Programs</h2>
+<hr />
+<p><em>lifecycle: Manage the Life Cycle of your Package Functions.</em>
+<a href="https://CRAN.R-project.org/package=lifecycle">Henry, Lionel; and RStudio, ( 2020-03-06 ).</a>
+A good potential candidate for recommended ways to manage software lifecycles</p>
+<hr />
+<p><em>RWsearch: Lazy Search in R Packages, Task Views, CRAN, the Web. All-in-One Download.</em>
+<a href="https://CRAN.R-project.org/package=RWsearch">Kiener, Patrice ( 2020-02-15 ).</a>
+May be useful for it’s ability to download and search package documentation.</p>
+<hr />
+<p><em>microsoft/nni.</em>
+<a href="https://github.com/microsoft/nni">Microsoft ( 2020-03-16T12:25:52Z ).</a>
+Potentially useful as a benchmarking tool for ML implementations based on Neural Networks (see also <code>uber/ludwig</code>)</p>
+<hr />
+<p><em>The Turing Way: A Handbook for Reproducible Data Science.</em>
+<a href="https://zenodo.org/record/3233986">The Turing Way Community, ; Becky Arnold, ; Louise Bowler, ; Sarah Gibson, ; Patricia Herterich, ; Rosie Higman, ; Anna Krystalli, ; Alexander Morley, ; Martin O’Reilly, ; and Kirstie Whitaker, ( 2019-03-25 ).</a>
+A useful reference for various aspects of reproducible science</p>
+<hr />
+<p><em>uber/ludwig.</em>
+<a href="https://github.com/uber/ludwig">uber ( 2020-03-16T10:25:42Z ).</a>
+Potentially useful as a benchmarking tool for ML implementations (see also <code>microsoft/nni</code>)</p>
+<hr />
+<div id="computer-programs-testing" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> Computer Programs (Testing)</h3>
+<p>Software specifically designed for testing.</p>
+<hr />
+<p><em>mikldk/roxytest.</em>
+<a href="https://github.com/mikldk/roxytest">Andersen, Mikkel Meyer ( 2020-03-04T21:43:17Z ).</a>
+Very useful extension of R testing through enabling tests to be specified <em>in-line</em> via <code>roxygen</code> entries, either through explicit specification (via <code>@test</code> hooks), or through converting examples to tests (via <code>@testexamples</code> hooks).</p>
+<hr />
+<p><em>markvanderloo/tinytest.</em>
+<a href="https://github.com/markvanderloo/tinytest">Loo, Mark van der ( 2020-03-04T15:20:41Z ).</a>
+Implements the unique (in R) and useful approach of treating test results as data amenable to analysis, rather than just throwing interrupt signals.</p>
+<hr />
+<p><em>Most testing is ineffective - Hypothesis.</em>
+<a href="https://hypothesis.works/">MacIver, David ( ).</a>
+“Hypothesis is a family of testing libraries which let you write tests parametrized by a source of examples. A Hypothesis implementation then generates simple and comprehensible examples that make your tests fail. This simplifies writing your tests and makes them more powerful at the same time, by letting software automate the boring bits and do them to a higher standard than a human would, freeing you to focus on the higher level test logic.”</p>
+<hr />
+<p><em>LudvigOlsen/xpectr.</em>
+<a href="https://github.com/LudvigOlsen/xpectr">Olsen, Ludvig Renbo ( 2020-03-02T09:31:14Z ).</a>
+R package for generating expectations for
+testthat
+unit testing. The main utility is via functions which <em>automatically</em> generate tests appropriate to the input structure of functions.</p>
+<hr />
+<p><em>r-lib/waldo.</em>
+<a href="https://github.com/r-lib/waldo">Wickham, Hadley ( 2020-03-30T13:36:53Z ).</a>
+Uses <code>diffobj</code> to create and return inline diffs between objects. Likely to be particularly useful in tests.</p>
+<hr />
+</div>
+</div>
+<div id="web-pages" class="section level2">
+<h2><span class="header-section-number">3.5</span> Web Pages</h2>
+<hr />
+<p><em>Jakob Bossek - PhD candidate.</em>
+<a href="http://www.jakobbossek.de/software/">Bossek, Jakob ( ).</a>
+List of software packages developed by Jakob Bossek, most of which are devoted to providing benchmarking abilities for comparison of graphs and graph algorithms.</p>
+<hr />
+<p><em>coreinfrastructure/best-practices-badge.</em>
+<a href="https://github.com/coreinfrastructure/best-practices-badge">Core Infrastructure ( ).</a>
+A definitive reference for general standards in open-source software, as detailed in the <a href="https://github.com/coreinfrastructure/best-practices-badge/blob/master/doc/criteria.md"><code>doc/criteria.md</code> document</a>. That said, it is a github-based document, and many of the standards directly describe github-based attributes and workflows.</p>
+<p> </p>
+<p>Sections considered are:</p>
+<ul>
+<li>Basic</li>
+<li>Website
+<ul>
+<li>License</li>
+<li>Documentation</li>
+<li>Other</li>
+</ul></li>
+<li>Must use https
+<ul>
+<li>Must provide for discussion</li>
+<li>Must be in English</li>
+<li>Change Control</li>
+</ul></li>
+<li>Public version control repo
+<ul>
+<li>Unique version numbering</li>
+<li>Semantic versioning</li>
+<li>Release notes</li>
+<li>Reporting</li>
+</ul></li>
+<li>Bug reporting
+<ul>
+<li>Vulnerability reporting</li>
+<li>Quality</li>
+</ul></li>
+<li>Working build system
+<ul>
+<li>Automated test suite (cover most branches, input fields, and functionality)</li>
+<li>Continuous integration</li>
+<li>New functionality testing</li>
+<li>Warning flags / linter</li>
+<li>Security</li>
+<li>Analysis</li>
+</ul></li>
+<li>Static code analysis (with links to lots of language-specific tools)
+<ul>
+<li>Dynamic code analysis (with links to lots of language-specific tools)</li>
+<li>Use of memory check tools, or memory-safe languages</li>
+</ul></li>
+</ul>
+<hr />
+<p><em>testing statistical software.</em>
+<a href="https://www.alexpghayes.com/blog/testing-statistical-software/">Hayes, Alex ( ).</a>
+Discusses four types of tests for statistical software:</p>
+<ul>
+<li><p>Correctness Tests</p></li>
+<li><p>Parameter Recovery Tests</p></li>
+<li><p>Convergence Tests</p></li>
+<li><p>Identification Tests (uniqueness/stability of solution)</p></li>
+</ul>
+<hr />
+<p><em>CODECHECK process.</em>
+<a href="https://codecheck.org.uk//process/">Nüst, Stephen Eglen &amp; Daniel ( ).</a>
+A badging service indicating whether or not code used to support published scientific manuscripts is reproducible or not.</p>
+<hr />
+<p><em>A Risk-based Approach for Assessing R package Accuracy within a Validated Infrastructure.</em>
+<a href="/white-paper//">R Validation HUb ( ).</a>
+The White Paper from the R Validation Hub project for validation pharmaceutical software. “R Validation Hub is a cross-industry initiative whose mission is to enable the use of R by the Bio-Pharmaceutical Industry in a regulatory setting, where the output may be used in submissions to regulatory agencies.” It describes the motivations and principles of their risk-based assessment of statistical software, much of which is directly implemented in the <a href="https://github.com/pharmaR/riskmetric"><code>riskmetric</code> package</a>.</p>
+<hr />
+<p><em>Pull Request review process - Reside-IC.</em>
+<a href="https://reside-ic.github.io/articles/pull-requests/">Reside-IC ( ).</a>
+A useful description of the pull request workflow developed by the Research Software for Infection Disease Epidemiology group at Imperial College, London.</p>
+<hr />
+<p><em>Shields.io: Quality metadata badges for open source projects.</em>
+<a href="https://shields.io/">sheilds.io ( ).</a>
+shields.io provides a badging service for many aspects of code, divided into the following general categories:</p>
+<ol style="list-style-type: decimal">
+<li><p>Build</p></li>
+<li><p>Code coverage</p></li>
+<li><p>Analysis</p></li>
+<li><p>Chat</p></li>
+<li><p>Dependencies</p></li>
+<li><p>Size</p></li>
+<li><p>Downloads</p></li>
+<li><p>Funding</p></li>
+<li><p>Issue Tracking</p></li>
+<li><p>License</p></li>
+<li><p>Rating</p></li>
+<li><p>Social</p></li>
+<li><p>Version</p></li>
+<li><p>Platform &amp; Version Support</p></li>
+<li><p>Monitoring</p></li>
+<li><p>Activity</p></li>
+</ol>
+<hr />
+<p><em>PEP 8 – Style Guide for Python Code.</em>
+<a href="https://www.python.org/dev/peps/pep-0008/">van Rossum, Guido; Warsaw, Barry; and Coghlan, Nick ( ).</a>
+The most widely used style guide for python code</p>
+<hr />
+</div>
+<div id="contributing-to-the-biblopgraphy" class="section level2">
+<h2><span class="header-section-number">3.6</span> Contributing to the bibliography</h2>
+<p>This annotated bibliography is automatically generated from entries containing
+“Note” fields in the <a href="https://www.zotero.org/groups/2416765/statistical-software?">zotero library accompanying this
+project</a>. Please
+feel free to add any additional entries you may see fit to this open library
+according to the following steps:</p>
+<ol style="list-style-type: decimal">
+<li>Open your local <a href="https://zotero.org">zotero client</a> and get a local copy of
+the <a href="https://www.zotero.org/groups/2416765/statistical-software?">project
+library</a>;</li>
+<li>Enable zotero in your web browser so that you can click on any webpage to
+add an entry to the shared library;</li>
+<li>Manually add a “Note” to any new entries and they’ll automatically appear
+here the next time this page is updated.</li>
+</ol>
+<p>This annotated bibliography extracts all text in all <code>Note</code> fields <strong>up to the
+first markdown section break</strong>, itself defined by a single line with a least
+three consecutive dashes as in the following example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="reading.html#cb1-1"></a>Add some note text to appear in this annotated bibliography</span>
+<span id="cb1-2"><a href="reading.html#cb1-2"></a></span>
+<span id="cb1-3"><a href="reading.html#cb1-3"></a>---</span>
+<span id="cb1-4"><a href="reading.html#cb1-4"></a></span>
+<span id="cb1-5"><a href="reading.html#cb1-5"></a>This text below the three dashes and any subsequent lines will not appear here.</span></code></pre></div>
+<p>Notes which do not contain a section break will appear here in their entirety.</p>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="overview.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="scope.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": true,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ropenscilabs/statistical-software-peer-review/edit/master/reading.Rmd",
+"text": "Edit this chapter"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["statistical-software-peer-review.pdf"],
+"toc": {
+"collapse": "subsection"
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": false,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
